@@ -1,0 +1,59 @@
+{
+  "sandwich": [
+    {
+      "name": "كفته مشوي",
+      "price": 30,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "سجق مشوي",
+      "price": 30,
+      "image": "./imgs/rasheedy-sanya-3.jpg"
+    },
+    {
+      "name": "سجق جريل",
+      "price": 30,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "كبدة اسكندراني",
+      "price": 30,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "كبدة مشوي",
+      "price": 30,
+      "image": "./imgs/rasheedy-wagpa-2.jpg"
+    },
+    {
+      "name": "شيش طاووق",
+      "price": 45,
+      "image": "./imgs/rasheedy-shesh-2.jpg"
+    },
+    {
+      "name": "ستيك",
+      "price": 60,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "حواوشي لحمة",
+      "price": 30,
+      "image": "./imgs/rasheedy-hawawshi.jpg"
+    },
+    {
+      "name": "حواوشي جبنة",
+      "price": 40,
+      "image": "./imgs/rasheedy-hawawshi.jpg"
+    },
+    {
+      "name": "حواوشي سجق جبنة",
+      "price": 45,
+      "image": "./imgs/rasheedy-hawawshi.jpg"
+    },
+    {
+      "name": "طرب",
+      "price": 60,
+      "image": "./imgs/rasheedy-wagpa-4.jpg"
+    }
+  ]
+}

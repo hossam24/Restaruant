@@ -1,0 +1,54 @@
+{
+  "edafat": [
+    {
+      "name": "مكرونة بشاميل",
+      "price": 45,
+      "image": "./imgs/rasheedy-sanya-4.jpg"
+    },
+    {
+      "name": "رز بسمتي",
+      "price": 30,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "سلطة خضراء",
+      "price": 10,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "طحينة",
+      "price": 7,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "مخلل",
+      "price": 5,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "بابا غنوج",
+      "price": 10,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "بطاطس فارم",
+      "price": 25,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "كانز",
+      "price": 20,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "براد شاي",
+      "price": 20,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "مياه معدنية",
+      "price": 10,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "wagabatFardy": [
+    {
+      "name": "مكس مشوي",
+      "description": "ربع فرخة + تمن كفتة",
+      "price": 130,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "وجبة كفتة وشيش",
+      "description": "تمن كفتة + ربع كيلو شيش طاووق",
+      "price": 140,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "وجبة كفتة وممبار",
+      "description": "ربع كيلو كفتة + تمن كيلو ممبار",
+      "price": 180,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "ميكس لحوم",
+      "description": "تمن سجق + تمن كفتة مشوية",
+      "price": 180,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "وجبة التوفير",
+      "description": "ربع فرخة + تمن كفتة + تمن شيش",
+      "price": 130,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "وجبة رعد",
+      "description": "ربع فراخ مشوي + تمن كفتة + تمن ممبار",
+      "price": 185,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    },
+    {
+      "name": "سوبر السلام",
+      "description": "ربع فراخ + تمن كفتة + تمن سجق",
+      "price": 200,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    }
+  ]
+}

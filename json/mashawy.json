@@ -1,0 +1,69 @@
+{
+  "mashawy": [
+    {
+      "name": "فرخة مشوية كاملة",
+      "image": "./imgs/rasheedy-frakh.jpg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 280 },
+        { "id": "half", "name": "نص كيلو", "price": 160 },
+        { "id": "quarter", "name": "ربع كيلو", "price": 85 }
+      ]
+    },
+    {
+      "name": "كفتة مشوية",
+      "image": "./imgs/rasheedy-wagpa-5.jpg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 380 },
+        { "id": "half",  "name": "نص كيلو", "price": 190 },
+        { "id": "quarter", "name": "ربع كيلو", "price": 95 }
+      ]
+    },
+    {
+      "name": "سجق مشوي",
+      "image": "./imgs/rasheedy-wagpa-5.jpg",
+      "hasSizes": true,
+      "sizes": [
+        {"id": "kilo", "name": "كيلو", "price": 360 },
+        {"id": "half", "name": "نص كيلو", "price": 180 },
+        {"id": "quarter", "name": "ربع كيلو", "price": 95 }
+      ]
+    },
+    {
+      "name": "استيك مشوي",
+      "image": "./imgs/rasheedy-wagpa.jpg",
+      "hasSizes": true,
+      "sizes": [
+        {"id": "kilo", "name": "كيلو", "price": 700 },
+        {"id": "half", "name": "نص كيلو", "price": 350 },
+        {"id": "quarter", "name": "ربع كيلو", "price": 180 }
+      ]
+    },
+    {
+      "name": "شيش طاووق",
+      "image": "./imgs/rasheedy-wagpa.jpg",
+      "hasSizes": true,
+      "sizes": [
+        {"id": "kilo", "name": "كيلو", "price": 380 },
+        {"id": "half", "name": "نص كيلو", "price": 190 },
+        {"id": "quarter", "name": "ربع كيلو", "price": 95 }
+      ]
+    },
+    {
+      "name": "ممبار بلدي",
+      "image": "./imgs/rasheedy-wagpa.jpg",
+      "hasSizes": true,
+      "sizes": [
+        {"id": "kilo", "name": "كيلو", "price": 320 },
+        {"id": "half", "name": "نص كيلو", "price": 160 },
+        {"id": "quarter", "name": "ربع كيلو", "price": 80 }
+      ]
+    },
+    {
+      "name": "فرد حمام",
+      "price": 175,
+      "image": "./imgs/rasheedy-sanya.jpg"
+    }
+  ]
+}

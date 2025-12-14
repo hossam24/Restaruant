@@ -1,0 +1,64 @@
+{
+  "sawaany": [
+    {
+      "name": "صنية السوبر",
+      "description": "فرخه كاملة + تلت كفته + تمن سجق + تمن ممبار + رز + عيش + سلطات",
+      "price": 550,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية الرايقة",
+      "description": "فرخه كاملة + نص كفته + رز + عيش + سلطات",
+      "price": 480,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية الأكل بيلح",
+      "description": "استيك + نص كفته + ريع سجق مشوي + رز + عيش + سلطات",
+      "price": 490,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية الذكاب",
+      "description": "فرخه كاملة + نص كفته + لحم سجق + لحم جوانش + سجق",
+      "price": 540,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية زينب",
+      "description": "فرخه كاملة + نص كفته + ريع ممبار + نص سجق + رز + عيش + سلطات",
+      "price": 520,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية فلاحين",
+      "description": "نص فرخه + نص كفته + نص سجق + رز + عيش + سلطات",
+      "price": 490,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية العتاولة",
+      "description": "فرخه ونص + كباب كفته + ريع سجق + ريع ممبار + رز + عيش + سلطات",
+      "price": 810,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية السيرة",
+      "description": "نص فرخة + ريع ممبار + ريع سجق + ريع كفته + لحم جوانش + رز + عيش + سلطات",
+      "price": 640,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية لمة العيلة",
+      "description": "فرخه كاملة + كباب او ريع كفته + ريع سجق + ريع ممبار + لحم جوانش + رز + عيش + سلطات",
+      "price": 600,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    },
+    {
+      "name": "صنية العريس",
+      "description": "جوز حمام + نص فرخه + ريع كفته + ريع سجق + ريع ممبار + رز",
+      "price": 880,
+      "image": "./imgs/rasheedy-sanya-2.jpg"
+    }
+  ]
+}

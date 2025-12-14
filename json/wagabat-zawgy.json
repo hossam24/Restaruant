@@ -1,0 +1,34 @@
+{
+  "wagabatZawgy": [
+    {
+      "name": "صنية التوينز",
+      "description": "نص فرخة + ربع كفتة + ربع ممبار",
+      "price": 230,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "صنية العرسان",
+      "description": "نص فرخة + ربع كفتة + ربع سجق",
+      "price": 330,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "صنية الحاج رشيدي",
+      "description": "نص فرخة + تمن كفتة + تمن سجق",
+      "price": 360,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "وجبة التوفير زوجي",
+      "description": "ربع كيلو كفتة مشوية + ربع كيلو سجق مشوي + ربع استيك",
+      "price": 370,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    },
+    {
+      "name": "وجبة ليلة العمر",
+      "description": "جوز حمام + ربع ممبار + ربع كفتة",
+      "price": 540,
+      "image": "./imgs/rasheedy-wagpa.jpg"
+    }
+  ]
+}
