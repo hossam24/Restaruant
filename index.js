@@ -314,6 +314,7 @@ function sendToWhatsApp() {
     const address = document.getElementById('deliveryAddress').value.trim();
     const phoneNumberInput = document.getElementById('PhoneNumber').value.trim();
     const additionalPhone = document.getElementById('additionalPhone').value.trim();
+    const hint = document.getElementById('hint').value.trim();
     
     // Validate required fields
     if (!address) {
@@ -357,7 +358,7 @@ function sendToWhatsApp() {
 
     
     // Replace with your WhatsApp number (include country code without + or 00)
-    const phoneNumber = '201111507894'; // Example: 201234567890
+    const phoneNumber = '201500909753'; // Example: 201234567890
     
     let message = '🍽️ *طلب جديد من مطعم راشيدي*\n\n';
     message += '📋 *الطلبات:*\n';
@@ -377,6 +378,10 @@ function sendToWhatsApp() {
     if (additionalPhone) {
         message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}`;
     }
+
+    if (hint) {
+        message += `\n📝 *ملاحظات إضافية:*\n${hint}\n`;
+    }
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
@@ -385,6 +390,7 @@ function sendToWhatsApp() {
     document.getElementById('deliveryAddress').value = '';
     document.getElementById('PhoneNumber').value = '';
     document.getElementById('additionalPhone').value = '';
+    document.getElementById('hint').value = '';
     updateCart();
     displayMenu(currentCategory);
     toggleCart();
