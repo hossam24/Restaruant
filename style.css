@@ -93,6 +93,24 @@ body {
     color: white;
 }
 
+.category-title {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.category-title i {
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
 .menu-item {
     background: white;
     border-radius: 15px;

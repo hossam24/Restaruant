@@ -75,6 +75,13 @@ function getCategoryItems(menu, category) {
   return category === 'all'? getAllItems(menu) :  menu[category];
 }
 
+// Get category title
+function getCategoryTitle(category) {
+    const titles = {
+        'mashawy': 'جميع المشويات تقدم مع رز و عيش و سلطات'
+    };
+    return titles[category] || null;
+}
 
 // Display Menu Items
 function displayMenu(category = 'all') {
@@ -85,7 +92,19 @@ function displayMenu(category = 'all') {
         container.innerHTML = '<div class="alert alert-info">لا توجد عناصر في هذا القسم حالياً.</div>';
         return;
     }
-    container.innerHTML = filtered.map(item => {
+    // Add category title if exists
+    let categoryTitleHTML = '';
+    const categoryTitle = getCategoryTitle(category);
+    if (categoryTitle) {
+        categoryTitleHTML = `
+            <div class="col-12">
+                <div class="category-title">
+                    <i class="fas fa-info-circle"></i> ${categoryTitle}
+                </div>
+            </div>
+        `;
+    }
+    container.innerHTML = categoryTitleHTML + filtered.map(item => {
         // Handle items with sizes
         if (item.hasSizes) {
             const selectedSize = selectedSizes[item.id] || item.sizes[0].id;
@@ -187,7 +206,6 @@ function filterCategory(category) {
 
 // Add to Cart
 function addToCart(itemId, sizeId = null) {
-    debugger;
     const item = getCategoryItems(menuItems,'all').find(i => i.id === itemId);
     const itemKey = getItemKey(itemId, sizeId);
     const existingItem = cart.find(i => i.cartKey === itemKey);
