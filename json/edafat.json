@@ -3,52 +3,52 @@
     {
       "name": "مكرونة بشاميل",
       "price": 45,
-      "image": "./imgs/rasheedy-sanya-4.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "رز بسمتي",
       "price": 30,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "سلطة خضراء",
       "price": 10,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "طحينة",
       "price": 7,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "مخلل",
       "price": 5,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "بابا غنوج",
       "price": 10,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "بطاطس فارم",
       "price": 25,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "كانز",
       "price": 20,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "براد شاي",
       "price": 20,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     },
     {
       "name": "مياه معدنية",
       "price": 10,
-      "image": "./imgs/rasheedy-wagpa.jpg"
+      "image": "./imgs/default.png"
     }
   ]
 }

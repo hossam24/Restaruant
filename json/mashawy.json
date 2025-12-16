@@ -2,7 +2,7 @@
   "mashawy": [
     {
       "name": "فرخة مشوية كاملة",
-      "image": "./imgs/rasheedy-frakh.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         { "id": "kilo", "name": "كيلو", "price": 280 },
@@ -12,7 +12,7 @@
     },
     {
       "name": "كفتة مشوية",
-      "image": "./imgs/rasheedy-wagpa-5.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         { "id": "kilo", "name": "كيلو", "price": 380 },
@@ -22,7 +22,7 @@
     },
     {
       "name": "سجق مشوي",
-      "image": "./imgs/rasheedy-wagpa-5.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 360 },
@@ -32,7 +32,7 @@
     },
     {
       "name": "استيك مشوي",
-      "image": "./imgs/rasheedy-wagpa.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 700 },
@@ -42,7 +42,7 @@
     },
     {
       "name": "شيش طاووق",
-      "image": "./imgs/rasheedy-wagpa.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 380 },
@@ -52,7 +52,7 @@
     },
     {
       "name": "ممبار بلدي",
-      "image": "./imgs/rasheedy-wagpa.jpg",
+      "image": "./imgs/default.png",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 320 },
@@ -63,7 +63,7 @@
     {
       "name": "فرد حمام",
       "price": 175,
-      "image": "./imgs/rasheedy-sanya.jpg"
+      "image": "./imgs/default.png"
     }
   ]
 }

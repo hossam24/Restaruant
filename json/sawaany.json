@@ -1,64 +1,76 @@
 {
   "sawaany": [
     {
+      "name": "صنية فلسطين",
+      "description": "نص فرخه + نص كفتة + نص سجق + رز + عيش + سلطات",
+      "price": 480,
+      "image": "./imgs/default.png"
+    },
+    {
+      "name": "صنية الرايق",
+      "description": "فرخه كاملة + نص كفته + رز + عيش + سلطات",
+      "price": 480,
+      "image": "./imgs/sawaany/elraya2.jpg"
+    },
+    {
+      "name": "صنية الاكيلة",
+      "description": "نص كفتة + ربع كباب استيك + ربع سجق مشوي + ربع ممبار + رز + عيش + سلطات",
+      "price": 490,
+      "image": "./imgs/sawaany/elakela.jpg"
+    },
+    {
       "name": "صنية السوبر",
       "description": "فرخه كاملة + تلت كفته + تمن سجق + تمن ممبار + رز + عيش + سلطات",
       "price": 550,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية الرايقة",
-      "description": "فرخه كاملة + نص كفته + رز + عيش + سلطات",
-      "price": 480,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية الأكل بيلح",
-      "description": "استيك + نص كفته + ريع سجق مشوي + رز + عيش + سلطات",
-      "price": 490,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية الذكاب",
-      "description": "فرخه كاملة + نص كفته + لحم سجق + لحم جوانش + سجق",
-      "price": 540,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
+      "image": "./imgs/sawaany/super.jpg"
     },
     {
       "name": "صنية زينب",
-      "description": "فرخه كاملة + نص كفته + ريع ممبار + نص سجق + رز + عيش + سلطات",
-      "price": 520,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
+      "description": "فرخه كاملة + نص كفته + ربع ممبار + نص سجق + ربع كبدة + رز بسمتي",
+      "price": 720,
+      "image": "./imgs/sawaany/zenab.jpg"
     },
     {
-      "name": "صنية فلاحين",
-      "description": "نص فرخه + نص كفته + نص سجق + رز + عيش + سلطات",
-      "price": 490,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية العتاولة",
-      "description": "فرخه ونص + كباب كفته + ريع سجق + ريع ممبار + رز + عيش + سلطات",
-      "price": 810,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية السيرة",
-      "description": "نص فرخة + ريع ممبار + ريع سجق + ريع كفته + لحم جوانش + رز + عيش + سلطات",
-      "price": 640,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
-    },
-    {
-      "name": "صنية لمة العيلة",
-      "description": "فرخه كاملة + كباب او ريع كفته + ريع سجق + ريع ممبار + لحم جوانش + رز + عيش + سلطات",
-      "price": 600,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
+      "name": "صنية الصحاب",
+      "description": "فرخه كاملة + نص كفته + تمن سجق + 2 حواوشي + رز بسمتي",
+      "price": 570,
+      "image": "./imgs/sawaany/elso7ab.jpg"
     },
     {
       "name": "صنية العريس",
-      "description": "جوز حمام + نص فرخه + ريع كفته + ريع سجق + ريع ممبار + رز",
-      "price": 880,
-      "image": "./imgs/rasheedy-sanya-2.jpg"
+      "description": "جوز حمام + نص فرخة + ربع كفتة + ربع سجق + ربع ممبار + رز بسمتي",
+      "price": 850,
+      "image": "./imgs/sawaany/el3arees.jpg"
+    },
+    {
+      "name": "صنية اسر",
+      "description": "نص فرخة + ريع ممبار + ريع سجق + ريع كفته + 2 حواوشي + رز + عيش + سلطات",
+      "price": 470,
+      "image": "./imgs/sawaany/aser.jpg"
+    },
+    {
+      "name": "صنية لمة العيلة",
+      "description": "فرخه كاملة + كيلو الا ربع كفتة + ريع سجق + ريع ممبار + لحم جوانش + رز + عيش + سلطات",
+      "price": 900,
+      "image": "./imgs/sawaany/lmeh-aleyla.jpg"
+    },
+    {
+      "name": "صنية العتاولة",
+      "description": "فرخه ونص + كيلو كفته + ريع سجق + ريع ممبار + رز + عيش + سلطات",
+      "price": 1050,
+      "image": "./imgs/default.png"
+    },
+    {
+      "name": "صنية عدنان",
+      "description": "فرخه+نص كفته + ربع ممبار + ربع سجق +رز بسمتي+عيش وسلطات",
+      "price": 600,
+      "image": "./imgs/sawaany/adnan.jpg"
+    },
+    {
+      "name": "صنية ولاد الاكابر",
+      "description": "نص فرخه + ربع كفته + ربع سجق + ربع ممبار + تمن طرب + 1 بشاميل + رز بسمتى عيش و سلطات",
+      "price": 500,
+      "image": "./imgs/sawaany/elakaber.jpg"
     }
   ]
 }

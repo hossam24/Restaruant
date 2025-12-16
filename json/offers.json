@@ -1,5 +1,42 @@
 {
     "offers": [
-     
+        {
+            "name": "عرض اقتصادي",
+            "description": "ربع فرخه + صابع كفته+ رز+لعيش + سلطات",
+            "price": 95,
+            "image": "./imgs/offers/wagba-eqtsadya.jpg"
+        },
+        {
+            "name": "وجبه الف هنا",
+            "description": "ربع فرخه مشويه + تمن كيلو كفته + محشي + رز بسمتي + عيش + سلطات",
+            "price": 130,
+            "image": "./imgs/default.png"
+        },
+        {
+            "name": "عرض الساندوتشات",
+            "description": "5 ساندوتشات عباره عن 2 كفته و 1 كبده و1 سجق و1 حواوشي",
+            "price": 125,
+            "image": "./imgs/default.png"
+        },
+        {
+            "name": "عرض الجامدين",
+            "description": "ص فرخه مشويه + تمن كيلو كفته + تمن كيلو ممبار بيتي + رز بسمتي +عيش+ سلطات",
+            "price": 250,
+            "image": "./imgs/default.png"
+        },
+        {
+            "name": "عرض الروقان",
+            "description": "نص فرخه +ربع كفته+ ربع  سجق +رز +عيش وسلطات",
+            "price": 330,
+            "image": "./imgs/default.png"
+        },
+        {
+            "name": "وجبة زيزو",
+            "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
+            "price": 200,
+            "image": "./imgs/default.png"
+        }
+        
+        
     ]
 }
