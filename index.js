@@ -390,15 +390,15 @@ function sendToWhatsApp() {
     message += `\n💰 *الإجمالي: ${total} جنيه غير شامل التوصيل*\n\n`;
     
     message += `📍 *عنوان التوصيل:*\n${address}\n`;
-    
+    message += `---------------------------------\n`;
     message += `📞 *رقم الهاتف:*\n${phoneNumberInput}\n`;
-    
     if (additionalPhone) {
-        message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}`;
+        message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}\n`;
     }
+    message += `---------------------------------\n`;
 
     if (hint) {
-        message += `\n📝 *ملاحظات إضافية:*\n${hint}\n`;
+        message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
     }
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
