@@ -2,7 +2,7 @@
     "offers": [
         {
             "name": "عرض اقتصادي",
-            "description": "ربع فرخه + صابع كفته+ رز+لعيش + سلطات",
+            "description": "ربع فرخه + صابع كفته+ رز+ عيش + سلطات",
             "price": 95,
             "image": "./imgs/offers/wagba-eqtsadya.jpg"
         },
@@ -22,13 +22,13 @@
             "name": "عرض الجامدين",
             "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو ممبار بيتي + رز بسمتي +عيش+ سلطات",
             "price": 250,
-            "image": "./imgs/default.png"
+            "image": "./imgs/offers/gamdeen.jpeg"
         },
         {
             "name": "عرض الروقان",
             "description": "نص فرخه +ربع كفته+ ربع  سجق +رز +عيش وسلطات",
             "price": 330,
-            "image": "./imgs/default.png"
+            "image": "./imgs/offers/el-rawkan.jpeg"
         },
         {
             "name": "وجبة زيزو",
