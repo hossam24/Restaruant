@@ -4,7 +4,7 @@
       "name": "مكس مشوي",
       "description": "ربع فرخة + تمن كفتة",
       "price": 130,
-      "image": "./imgs/default.png"
+      "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
     },
     {
       "name": "وجبة كفتة وشيش",
@@ -37,10 +37,34 @@
       "image": "./imgs/wagabat-fardy/ra3d.jpg"
     },
     {
+      "name": "وجبة برق",
+      "description": "",
+      "price": 0,
+      "image": "./imgs/wagabat-fardy/barq.jpeg"
+    },
+    {
+      "name": "وجبة الخميس",
+      "description": "",
+      "price": 0,
+      "image": "./imgs/wagabat-fardy/el5ames.jpeg"
+    },
+    {
+      "name": "وجبة زيزو",
+      "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
+      "price": 200,
+      "image": "./imgs/default.png"
+    },
+    {
+      "name": "وجبه الف هنا",
+      "description": "ربع فرخه مشويه + تمن كيلو كفته + محشي + رز بسمتي + عيش + سلطات",
+      "price": 130,
+      "image": "./imgs/default.png"
+    },
+    {
       "name": "ميكس السعادة",
       "description": "ربع فراخ + تمن كفتة + تمن سجق + تمن ممبار",
       "price": 200,
-      "image": "./imgs/default.png"
+      "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
     }
   ]
 }

@@ -9,7 +9,8 @@
     {
       "name": "صنية الرايق",
       "description": "فرخه كاملة + نص كفته + رز + عيش + سلطات",
-      "price": 480,
+      "originalPrice": 550,
+      "newPrice": 450,
       "image": "./imgs/sawaany/elraya2.jpg"
     },
     {
@@ -71,6 +72,12 @@
       "description": "نص فرخه + ربع كفته + ربع سجق + ربع ممبار + تمن طرب + 1 بشاميل + رز بسمتى عيش و سلطات",
       "price": 500,
       "image": "./imgs/sawaany/elakaber.jpg"
+    },
+    {
+      "name": "صنيه التوينز",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو ممبار + رز بسمتي عيش سلطات",
+      "price": 330,
+      "image": "./imgs/sawaany/eltweens.jpg"
     }
   ]
 }

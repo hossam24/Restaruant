@@ -1,5 +1,19 @@
 {
   "wagabatZawgy": [
+    {
+      "name": "وجبة التوربيني",
+      "description": "نص فرخه +تمن كفته +تمن سجق و رز وعيش وسلطات",
+      "price": 250,
+      "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
+    },
+    
+    {
+      "name": "وجبه الدبل",
+      "description": "نص فرخه + 2 حواوشي + 2 كفته + رز بسمتي + عيش + سلطات",
+      "price": 250,
+      "image": "./imgs/default.png"
+    },
+    
    {
       "name": "صنيه التوينز",
       "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو ممبار + رز بسمتي عيش سلطات",
@@ -30,5 +44,7 @@
       "price": 540,
       "image": "./imgs/default.png"
     }
+
+    
   ]
 }

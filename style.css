@@ -153,6 +153,23 @@ body {
     font-weight: bold;
     color: #F39C12;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Price Styling for Offers */
+.original-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+.new-price {
+    font-size: 1.5rem;
+    color: #27ae60;
+    font-weight: bold;
 }
 
 .size-options {

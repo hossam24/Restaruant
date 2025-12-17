@@ -2,7 +2,7 @@
   "mashawy": [
     {
       "name": "فرخة مشوية كاملة",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/fra5.jpg",
       "hasSizes": true,
       "sizes": [
         { "id": "kilo", "name": "كيلو", "price": 280 },
@@ -12,7 +12,7 @@
     },
     {
       "name": "كفتة مشوية",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/kofta.jpg",
       "hasSizes": true,
       "sizes": [
         { "id": "kilo", "name": "كيلو", "price": 380 },
@@ -42,7 +42,7 @@
     },
     {
       "name": "شيش طاووق",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/shish.jpg",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 380 },
@@ -52,7 +52,7 @@
     },
     {
       "name": "ممبار بلدي",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/mombar.jpg",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 320 },
@@ -61,9 +61,15 @@
       ]
     },
     {
+      "name": "نص مشكل",
+      "description": "نص كيلو مشكل كباب و كفتة",
+      "price": 0,
+      "image": "./imgs/mashawy/nos-mshakel.jpeg"
+    },
+    {
       "name": "فرد حمام",
       "price": 175,
-      "image": "./imgs/default.png"
+      "image": "./imgs/mashawy/7amam.jpeg"
     }
   ]
 }

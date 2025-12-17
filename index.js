@@ -43,13 +43,13 @@ let selectedSizes = {}; // Track selected size for each item
 // Load menu and initialize
 loadMenu().then(menu => {
   menuItems = {
-    sandwich: addIds(menu.sandwich),
-    mashawy: addIds(menu.mashawy),
+    offers: addIds(menu.offers),
     wagabatFardy: addIds(menu.wagabatFardy),
     wagabatZawgy: addIds(menu.wagabatZawgy),
     sawaany: addIds(menu.sawaany),
+    mashawy: addIds(menu.mashawy),
+    sandwich: addIds(menu.sandwich),
     edafat: addIds(menu.edafat),
-    offers: addIds(menu.offers)
   };
   
   // Initialize display after menu is loaded
@@ -57,6 +57,7 @@ loadMenu().then(menu => {
 }).catch(err => {
   document.getElementById('menuContainer').innerHTML = '<div class="alert alert-danger">فشل تحميل القائمة. يرجى تحديث الصفحة.</div>';
 });
+
 function selectSize(itemId, sizeId) {
     selectedSizes[itemId] = sizeId;
     displayMenu(currentCategory);
@@ -81,6 +82,26 @@ function getCategoryTitle(category) {
         'mashawy': 'جميع المشويات تقدم مع رز و عيش و سلطات'
     };
     return titles[category] || null;
+}
+
+// Helper function to get price display HTML
+function getPriceHTML(item, currentSize = null) {
+    const price = currentSize ? currentSize.price : item.price;
+    const originalPrice = currentSize ? currentSize.originalPrice : item.originalPrice;
+    const newPrice = currentSize ? currentSize.newPrice : item.newPrice;
+    
+    // If there's a newPrice, show both original (strikethrough) and new price
+    if (newPrice !== undefined && newPrice !== null) {
+        return `
+            <div class="menu-item-price">
+                <span class="original-price">${originalPrice || price} جنيه</span>
+                <span class="new-price">${newPrice} جنيه</span>
+            </div>
+        `;
+    }
+    
+    // Otherwise, show normal price
+    return `<div class="menu-item-price">${price} جنيه</div>`;
 }
 
 // Display Menu Items
@@ -130,7 +151,8 @@ function displayMenu(category = 'all') {
                             `).join('')}
                         </div>
                         
-                        <div class="menu-item-price">${currentSize.price} جنيه</div>
+                        ${getPriceHTML(item, currentSize)}
+                        
                         ${isInCart ? `
                             <div class="item-quantity-control">
                                 <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id}, '${selectedSize}')">
@@ -165,7 +187,9 @@ function displayMenu(category = 'all') {
                     <div class="menu-item-body">
                         <div class="menu-item-title">${item.name}</div>
                         <div class="menu-item-desc">${item.description? item.description : ''}</div>
-                        <div class="menu-item-price">${item.price} جنيه</div>
+                        
+                        ${getPriceHTML(item)}
+                        
                         ${isInCart ? `
                             <div class="item-quantity-control">
                                 <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id})">
@@ -219,10 +243,13 @@ function addToCart(itemId, sizeId = null) {
         if (item.hasSizes && sizeId) {
             const size = item.sizes.find(s => s.id === sizeId);
             cartItem.selectedSize = size;
-            cartItem.price = size.price;
+            // Use newPrice if available, otherwise use regular price
+            cartItem.price = size.newPrice !== undefined && size.newPrice !== null ? size.newPrice : size.price;
             cartItem.displayName = `${item.name} - ${size.name}`;
         } else {
             cartItem.displayName = item.name;
+            // Use newPrice if available, otherwise use regular price
+            cartItem.price = item.newPrice !== undefined && item.newPrice !== null ? item.newPrice : item.price;
         }
         
         cart.push(cartItem);

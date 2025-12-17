@@ -3,32 +3,32 @@
     {
       "name": "كفته مشوي",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/kofta.jpg"
     },
     {
       "name": "سجق مشوي",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/sgo2.jpg"
     },
     {
       "name": "سجق جريل",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/sgo2.jpg"
     },
     {
       "name": "كبدة اسكندراني",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/kebda.jpg"
     },
     {
       "name": "كبدة مشوي",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/kebda.jpg"
     },
     {
       "name": "شيش طاووق",
       "price": 45,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/shish-sand.jpg"
     },
     {
       "name": "ستيك",
