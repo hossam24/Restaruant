@@ -51,7 +51,8 @@
     {
       "name": "وجبة زيزو",
       "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
-      "price": 200,
+      "originalPrice": 250,
+      "newPrice": 200,
       "image": "./imgs/default.png"
     },
     {
