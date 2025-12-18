@@ -4,7 +4,7 @@
       "name": "صنية فلسطين",
       "description": "نص فرخه + نص كفتة + نص سجق + رز + عيش + سلطات",
       "price": 480,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sawaany/palestine.jpeg"
     },
     {
       "name": "صنية الرايق",
@@ -59,7 +59,7 @@
       "name": "صنية العتاولة",
       "description": "فرخه ونص + كيلو كفته + ربع سجق + ربع ممبار + رز + عيش + سلطات",
       "price": 1050,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sawaany/3atawla.jpeg"
     },
     {
       "name": "صنية عدنان",

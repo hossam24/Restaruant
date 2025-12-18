@@ -22,7 +22,7 @@
     },
     {
       "name": "سجق مشوي",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/sgok2.jpeg",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 360 },
@@ -32,7 +32,7 @@
     },
     {
       "name": "استيك مشوي",
-      "image": "./imgs/default.png",
+      "image": "./imgs/mashawy/steak.jpeg",
       "hasSizes": true,
       "sizes": [
         {"id": "kilo", "name": "كيلو", "price": 700 },

@@ -33,7 +33,7 @@
     {
       "name": "ستيك",
       "price": 60,
-      "image": "./imgs/default.png"
+      "image": "./imgs/mashawy/steak.jpeg"
     },
     {
       "name": "حواوشي لحمة",
@@ -53,7 +53,7 @@
     {
       "name": "طرب",
       "price": 60,
-      "image": "./imgs/default.png"
+      "image": "./imgs/sandwich/tarb.jpg"
     }
   ]
 }

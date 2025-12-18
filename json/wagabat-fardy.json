@@ -22,7 +22,7 @@
       "name": "ميكس لحوم",
       "description": "تمن لحمة ستيك + تمن كفتة مشوية + تمن سجق مشوي",
       "price": 180,
-      "image": "./imgs/default.png"
+      "image": "./imgs/wagabat-fardy/mix-l7oom.jpeg"
     },
     {
       "name": "وجبة الفورمة",
@@ -53,13 +53,13 @@
       "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
       "originalPrice": 250,
       "newPrice": 200,
-      "image": "./imgs/default.png"
+      "image": "./imgs/wagabat-fardy/zizo.jpeg"
     },
     {
       "name": "وجبه الف هنا",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + محشي + رز بسمتي + عيش + سلطات",
       "price": 130,
-      "image": "./imgs/default.png"
+      "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
     },
     {
       "name": "ميكس السعادة",

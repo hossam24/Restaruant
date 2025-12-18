@@ -8,47 +8,47 @@
     {
       "name": "رز بسمتي",
       "price": 30,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/basmaty.jpg"
     },
     {
       "name": "سلطة خضراء",
       "price": 10,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/salta.webp"
     },
     {
       "name": "طحينة",
       "price": 7,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/t7ena.jpg"
     },
     {
       "name": "مخلل",
       "price": 5,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/m5ll.jpg"
     },
     {
       "name": "بابا غنوج",
       "price": 10,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/8nog.webp"
     },
     {
       "name": "بطاطس فارم",
       "price": 25,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/farm.jpg"
     },
     {
       "name": "كانز",
       "price": 20,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/v-seven.jpg"
     },
     {
       "name": "براد شاي",
       "price": 20,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/tea.webp"
     },
     {
       "name": "مياه معدنية",
       "price": 10,
-      "image": "./imgs/default.png"
+      "image": "./imgs/additionals/water.jpg"
     }
   ]
 }
