@@ -15,9 +15,9 @@
         },
         {
             "name": "عرض 10 ساندوتشات",
-            "description": "",
-            "originalPrice": 10,
-            "newPrice": 0,
+            "description": "10 ساندوتشات عباره عن 4 كفته و 2 كبده و2 سجق و2 حواوشي",
+            "originalPrice": 300,
+            "newPrice": 250,
             "image": "./imgs/offers/10sand.jpeg"
         },
         {
@@ -40,6 +40,13 @@
             "newPrice": 450,
             "description": "فرخه كامله + نص كيلو كفته مشويه + رز بسمتي + عيش وسلطات",
             "image": "./imgs/sawaany/elraya2.jpg"
+        },
+        {
+            "name": "وجبة زيزو",
+            "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
+            "originalPrice": 250,
+            "newPrice": 200,
+            "image": "./imgs/wagabat-fardy/zizo.jpeg"
         }
         
     ]

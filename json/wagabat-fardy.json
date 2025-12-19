@@ -38,22 +38,15 @@
     },
     {
       "name": "وجبة برق",
-      "description": "",
-      "price": 0,
+      "description": "ربع فراخ مشوي + تمن كفتة + تمن سجق + رغيف حواوشي",
+      "price": 185,
       "image": "./imgs/wagabat-fardy/barq.jpeg"
     },
     {
       "name": "وجبة الخميس",
-      "description": "",
-      "price": 0,
+      "description": "فرد حمام + تمن كفته + رز بسمتي + عيش + سلطات",
+      "price": 220,
       "image": "./imgs/wagabat-fardy/el5ames.jpeg"
-    },
-    {
-      "name": "وجبة زيزو",
-      "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
-      "originalPrice": 250,
-      "newPrice": 200,
-      "image": "./imgs/wagabat-fardy/zizo.jpeg"
     },
     {
       "name": "وجبه الف هنا",
