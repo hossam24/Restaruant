@@ -44,13 +44,13 @@
     },
     {
       "name": "وجبة الخميس",
-      "description": "فرد حمام + تمن كفته + رز بسمتي + عيش + سلطات",
+      "description": "فرد حمام + تمن كفتة + رز بسمتي + عيش + سلطات",
       "price": 220,
       "image": "./imgs/wagabat-fardy/el5ames.jpeg"
     },
     {
       "name": "وجبه الف هنا",
-      "description": "ربع فرخه مشويه + تمن كيلو كفته + محشي + رز بسمتي + عيش + سلطات",
+      "description": "ربع فرخة مشويه + تمن كيلو كفتة + محشي + رز بسمتي + عيش + سلطات",
       "originalPrice": 150,
       "newPrice": 130,
       "image": "./imgs/wagabat-fardy/alf-hana.jpeg"

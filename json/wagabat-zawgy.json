@@ -2,27 +2,27 @@
   "wagabatZawgy": [
     {
       "name": "وجبة التوربيني",
-      "description": "نص فرخه + تمن كفته + تمن سجق + رز + عيش + سلطات",
+      "description": "نص فرخة + تمن كفتة + تمن سجق + رز + عيش + سلطات",
       "price": 250,
       "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
     },
     
     {
       "name": "وجبه الدبل",
-      "description": "نص فرخه + 2 حواوشي + 2 كفته + رز بسمتي + عيش + سلطات",
+      "description": "نص فرخة + 2 حواوشي + 2 كفتة + رز بسمتي + عيش + سلطات",
       "price": 250,
       "image": "./imgs/default.png"
     },
     
    {
       "name": "صنيه التوينز",
-      "description": "نص فرخه + ربع كفته + ربع ممبار + رز + عيش + سلطات",
+      "description": "نص فرخة + ربع كفتة + ربع ممبار + رز + عيش + سلطات",
       "price": 330,
       "image": "./imgs/wagabat-zawgy/twenz.jpg"
     },
     {
       "name": "صنيه الروقان",
-      "description": "نص فرخه +ربع كفته+ ربع  سجق +رز +عيش وسلطات",
+      "description": "نص فرخة +ربع كفتة+ ربع  سجق +رز +عيش وسلطات",
       "originalPrice": 400,
       "newPrice": 330,
       "image": "./imgs/offers/el-rawkan.jpeg"

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "كفته مشوي",
+    "name": "كفتة مشوي",
     "price": 30,
     "category": "sandwich",
     "image": "./imgs/rasheedy-sanya-2.jpg"
@@ -254,7 +254,7 @@
     {
         "id": 25,
         "name": "صنية السوبر",
-        "description": "فرخه كاملة + تلت كفته + تمن سجق + تمن ممبار + رز + عيش + سلطات",
+        "description": "فرخة كاملة + تلت كفتة + تمن سجق + تمن ممبار + رز + عيش + سلطات",
         "category": "sawaany",
         "image": "./imgs/rasheedy-sanya-3.jpg",
         "price": 550
@@ -262,7 +262,7 @@
     {
         "id": 26,
         "name": " صنية الرايق",
-        "description": "فرخه كاملة + تلت كفته + تمن سجق + تمن ممبار + رز + عيش + سلطات",
+        "description": "فرخة كاملة + تلت كفتة + تمن سجق + تمن ممبار + رز + عيش + سلطات",
         "category": "sawaany",
         "image": "./imgs/rasheedy-sanya-2.jpg",
         "price": 480
