@@ -10,11 +10,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-     <!-- Navbar -->
+   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./imgs/icon.ico" style="height:40px; margin-left:8px; border-radius: 100%;"></i> مطعم رشيدي
+                <img src="./imgs/icon.ico" style="height:40px; margin-left:8px; border-radius: 100%;"> مطعم رشيدي
             </a>
             <button class="cart-btn" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i> السلة
@@ -27,7 +27,7 @@
     <div class="hero">
         <div class="container">
             <h1> مرحباً بكم في مشويات رشيدي</h1>
-            <p class="lead">🔥🔥 مـــلـــك العـــروض 🔥🔥</p>
+            <p class="lead">🔥🔥 ملك العروض 🔥🔥</p>
         </div>
     </div>
 
@@ -61,22 +61,52 @@
             <div class="cart-total" id="cartTotal">الإجمالي: 0 جنيه</div>
             
             <div class="order-details">
-                <h4 style="margin-bottom: 15px; color: #333;">تفاصيل التوصيل</h4>
-                <div class="form-group">
-                    <label>العنوان<span class="required">*</span></label>
-                    <textarea id="deliveryAddress" placeholder="أدخل عنوان التوصيل بالتفصيل..." required></textarea>
+                <h4 style="margin-bottom: 15px; color: #333;">نوع الطلب</h4>
+                
+                <!-- Order Type Selector -->
+                <div class="order-type-selector">
+                    <button class="order-type-btn active" id="deliveryBtn" onclick="selectOrderType('delivery')">
+                        <i class="fas fa-motorcycle"></i> توصيل
+                    </button>
+<!--                    <button class="order-type-btn" id="dineinBtn" onclick="selectOrderType('dinein')">-->
+<!--                        <i class="fas fa-utensils"></i> طاولة بالمطعم-->
+<!--                    </button>-->
                 </div>
-                <div class="form-group">
-                    <label>رقم الهاتف<span class="required">*</span> </label>
-                    <input type="tel" id="PhoneNumber" placeholder="مثال: 01234567890" required>
+
+                <!-- Delivery Fields -->
+                <div class="delivery-fields active" id="deliveryFields">
+                    <h4 style="margin-bottom: 15px; color: #333;">تفاصيل التوصيل</h4>
+                    <div class="form-group">
+                        <label>العنوان<span class="required">*</span></label>
+                        <textarea id="deliveryAddress" placeholder="أدخل عنوان التوصيل بالتفصيل..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف<span class="required">*</span> </label>
+                        <input type="tel" id="PhoneNumber" placeholder="مثال: 01234567890">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم هاتف إضافي (اختياري)</label>
+                        <input type="tel" id="additionalPhone" placeholder="مثال: 01234567890">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>رقم هاتف إضافي (اختياري)</label>
-                    <input type="tel" id="additionalPhone" placeholder="مثال: 01234567890">
+
+                <!-- Dine-in Fields -->
+                <div class="dinein-fields" id="dineinFields">
+                    <h4 style="margin-bottom: 15px; color: #333;">تفاصيل الطاولة</h4>
+                    <div class="form-group">
+                        <label>رقم الطاولة<span class="required">*</span></label>
+                        <input type="number" id="tableNumber" placeholder="أدخل رقم الطاولة" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>اسم العميل (اختياري)</label>
+                        <input type="text" id="customerName" placeholder="أدخل اسمك">
+                    </div>
                 </div>
+
+                <!-- Common Fields -->
                 <div class="form-group">
                     <label>ملاحظات إضافية (اختياري)</label>
-                    <textarea id="hint"></textarea>
+                    <textarea id="hint" placeholder="أي ملاحظات خاصة بالطلب..."></textarea>
                 </div>
             </div>
             
@@ -115,10 +145,6 @@
                     <p style="font-size: 1.1rem; line-height: 1.8;">
 شارع الحلو مع الامام البصيري امام كلية تجارة من الحلو
                     </p>
-                    <!-- <p style="margin-top: 15px;">
-                        <i class="fas fa-clock"></i> 
-                        <strong>ساعات العمل:</strong> يومياً من 10 صباحاً - 12 منتصف الليل
-                    </p> -->
                 </div>
 
                 <!-- Social Media Section -->

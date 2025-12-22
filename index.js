@@ -38,7 +38,9 @@ function addIds(items) {
 let menuItems = {};
 let cart = [];
 let currentCategory = 'all';
-let selectedSizes = {}; // Track selected size for each item
+let selectedSizes = {};
+let orderType = 'delivery'; // 'delivery' or 'dinein'
+const SERVICE_FEE = 10; // Service fee for dine-in orders in EGP
 
 // Load menu and initialize
 loadMenu().then(menu => {
@@ -57,6 +59,118 @@ loadMenu().then(menu => {
 }).catch(err => {
   document.getElementById('menuContainer').innerHTML = '<div class="alert alert-danger">فشل تحميل القائمة. يرجى تحديث الصفحة.</div>';
 });
+
+// Show custom alert popup
+function showAlert(message, type = 'error') {
+    // Remove existing alert if any
+    const existingAlert = document.getElementById('customAlert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+    
+    const alertDiv = document.createElement('div');
+    alertDiv.id = 'customAlert';
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        z-index: 10000;
+        min-width: 300px;
+        max-width: 90%;
+        text-align: center;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    const iconHTML = type === 'success' 
+        ? '<i class="fas fa-check-circle" style="font-size: 3rem; color: #27ae60; margin-bottom: 15px;"></i>'
+        : '<i class="fas fa-exclamation-circle" style="font-size: 3rem; color: #e74c3c; margin-bottom: 15px;"></i>';
+    
+    alertDiv.innerHTML = `
+        ${iconHTML}
+        <p style="font-size: 1.1rem; margin: 15px 0; color: #333; line-height: 1.6;">${message}</p>
+        <button onclick="closeAlert()" style="
+            background: linear-gradient(to right, #e67e22, #f39c12);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: all 0.3s;
+        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">حسناً</button>
+    `;
+    
+    // Create backdrop
+    const backdrop = document.createElement('div');
+    backdrop.id = 'alertBackdrop';
+    backdrop.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+    `;
+    backdrop.onclick = closeAlert;
+    
+    document.body.appendChild(backdrop);
+    document.body.appendChild(alertDiv);
+    
+    // Add animations if not already added
+    if (!document.getElementById('alertAnimations')) {
+        const style = document.createElement('style');
+        style.id = 'alertAnimations';
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translate(-50%, -60%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translate(-50%, -50%);
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+function closeAlert() {
+    const alert = document.getElementById('customAlert');
+    const backdrop = document.getElementById('alertBackdrop');
+    if (alert) alert.remove();
+    if (backdrop) backdrop.remove();
+}
+
+// Select Order Type
+function selectOrderType(type) {
+    orderType = type;
+    
+    // Update button states
+    document.getElementById('deliveryBtn').classList.toggle('active', type === 'delivery');
+    document.getElementById('dineinBtn').classList.toggle('active', type === 'dinein');
+    
+    // Show/hide relevant fields
+    document.getElementById('deliveryFields').classList.toggle('active', type === 'delivery');
+    document.getElementById('dineinFields').classList.toggle('active', type === 'dinein');
+    
+    // Update cart display to reflect service fee
+    updateCart();
+}
 
 function selectSize(itemId, sizeId) {
     selectedSizes[itemId] = sizeId;
@@ -266,7 +380,7 @@ function updateCart() {
     const cartTotal = document.getElementById('cartTotal');
     
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     cartCount.textContent = totalItems;
     
@@ -289,7 +403,18 @@ function updateCart() {
         `).join('');
     }
     
-    cartTotal.textContent = `الإجمالي : ${totalPrice} جنيه غير شامل التوصيل`;
+    // Calculate total based on order type
+    let totalPrice = subtotal;
+    let totalText = '';
+    
+    if (orderType === 'delivery') {
+        totalText = `الإجمالي : ${totalPrice} جنيه غير شامل التوصيل`;
+    } else {
+        totalPrice += SERVICE_FEE;
+        totalText = `المجموع الفرعي: ${subtotal} جنيه<br> الخدمة: ${SERVICE_FEE} جنيه<br><strong>الإجمالي: ${totalPrice} جنيه</strong>`;
+    }
+    
+    cartTotal.innerHTML = totalText;
 }
 
 // Increase Quantity
@@ -351,97 +476,140 @@ function toggleCart() {
 // Send to WhatsApp
 function sendToWhatsApp() {
     if (cart.length === 0) {
-        alert('السلة فارغة!');
+        showAlert('السلة فارغة!', 'error');
         return;
     }
     
-    // Get delivery details
-    const address = document.getElementById('deliveryAddress').value.trim();
-    const phoneNumberInput = document.getElementById('PhoneNumber').value.trim();
-    const additionalPhone = document.getElementById('additionalPhone').value.trim();
-    const hint = document.getElementById('hint').value.trim();
-    
-    // Validate required fields
-    if (!address) {
-        alert('من فضلك أدخل عنوان التوصيل!');
-        document.getElementById('deliveryAddress').focus();
-        return;
-    }
-    if(!phoneNumberInput){
-        alert('من فضلك أدخل رقم الهاتف!');
-        document.getElementById('PhoneNumber').focus();
-        return;
-    }
-
-    const phoneRegex = /^(01)[0-2,5]{1}[0-9]{8}$/; // Egyptian phone format: 01X XXXX XXXX
-    if (!phoneRegex.test(phoneNumberInput)) {
-        alert('رقم الهاتف غير صحيح! يجب أن يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015');
-        document.getElementById('PhoneNumber').focus();
-        return;
-    }
-
-    // ✅ Validate phone contains only numbers
-    if (!/^\d+$/.test(phoneNumberInput)) {
-        alert('رقم الهاتف يجب أن يحتوي على أرقام فقط!');
-        document.getElementById('PhoneNumber').focus();
-        return;
-    }
-
-    if (additionalPhone != '' && !phoneRegex.test(additionalPhone)) {
-        alert('رقم الهاتف غير صحيح! يجب أن يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015');
-        document.getElementById('PhoneNumber').focus();
-        return;
-    }
-
-    // ✅ Validate phone contains only numbers
-    if (additionalPhone != '' &&  !/^\d+$/.test(additionalPhone)) {
-        alert('رقم الهاتف يجب أن يحتوي على أرقام فقط!');
-        document.getElementById('PhoneNumber').focus();
-        return;
-    }
-
-
-    
-    // Replace with your WhatsApp number (include country code without + or 00)
-    const phoneNumber = '201500909753'; // Example: 201234567890
-    
+    const phoneNumber = '201500909753';
     let message = '🍽️ *طلب جديد من مطعم راشيدي*\n\n';
-    message += '📋 *الطلبات:*\n';
     
-    cart.forEach(item => {
-        message += `\n• ${item.displayName} (${item.quantity}x) - ${item.price * item.quantity} جنيه\n`;
-        message += `---------------------------------\n`;
-    });
-    
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    message += `\n💰 *الإجمالي: ${total} جنيه غير شامل التوصيل*\n\n`;
-    
-    message += `📍 *عنوان التوصيل:*\n${address}\n`;
-    message += `---------------------------------\n`;
-    message += `📞 *رقم الهاتف:*\n${phoneNumberInput}\n`;
-    if (additionalPhone) {
-        message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}\n`;
-    }
-    message += `---------------------------------\n`;
+    // Validate based on order type
+    if (orderType === 'delivery') {
+        const address = document.getElementById('deliveryAddress').value.trim();
+        const phoneNumberInput = document.getElementById('PhoneNumber').value.trim();
+        const additionalPhone = document.getElementById('additionalPhone').value.trim();
+        
+        // Validate required fields
+        if (!address) {
+            showAlert('من فضلك أدخل عنوان التوصيل!', 'error');
+            document.getElementById('deliveryAddress').focus();
+            return;
+        }
+        if(!phoneNumberInput){
+            showAlert('من فضلك أدخل رقم الهاتف!', 'error');
+            document.getElementById('PhoneNumber').focus();
+            return;
+        }
 
-    if (hint) {
-        message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
+        const phoneRegex = /^(01)[0-2,5]{1}[0-9]{8}$/;
+        if (!phoneRegex.test(phoneNumberInput)) {
+            showAlert('رقم الهاتف غير صحيح! يجب أن يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015', 'error');
+            document.getElementById('PhoneNumber').focus();
+            return;
+        }
+
+        if (!/^\d+$/.test(phoneNumberInput)) {
+            showAlert('رقم الهاتف يجب أن يحتوي على أرقام فقط!', 'error');
+            document.getElementById('PhoneNumber').focus();
+            return;
+        }
+
+        if (additionalPhone != '' && !phoneRegex.test(additionalPhone)) {
+            showAlert('رقم الهاتف الإضافي غير صحيح! يجب أن يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015', 'error');
+            document.getElementById('additionalPhone').focus();
+            return;
+        }
+
+        if (additionalPhone != '' &&  !/^\d+$/.test(additionalPhone)) {
+            showAlert('رقم الهاتف يجب أن يحتوي على أرقام فقط!', 'error');
+            document.getElementById('additionalPhone').focus();
+            return;
+        }
+
+        message += '📦 *نوع الطلب: توصيل*\n\n';
+        message += '📋 *الطلبات:*\n';
+        
+        cart.forEach(item => {
+            message += `\n• ${item.displayName} (${item.quantity}x) - ${item.price * item.quantity} جنيه\n`;
+            message += `---------------------------------\n`;
+        });
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        message += `\n💰 *الإجمالي: ${total} جنيه غير شامل التوصيل*\n\n`;
+        
+        message += `📍 *عنوان التوصيل:*\n${address}\n`;
+        message += `---------------------------------\n`;
+        message += `📞 *رقم الهاتف:*\n${phoneNumberInput}\n`;
+        if (additionalPhone) {
+            message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}\n`;
+        }
+        message += `---------------------------------\n`;
+
+        const hint = document.getElementById('hint').value.trim();
+        if (hint) {
+            message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
+        }
+
+    } else if (orderType === 'dinein') {
+        const tableNumber = document.getElementById('tableNumber').value.trim();
+        const customerName = document.getElementById('customerName').value.trim();
+        
+        // Validate required fields
+        if (!tableNumber) {
+            showAlert('من فضلك أدخل رقم الطاولة!', 'error');
+            document.getElementById('tableNumber').focus();
+            return;
+        }
+
+        message += '🪑 *نوع الطلب: طاولة بالمطعم*\n\n';
+        message += '📋 *الطلبات:*\n';
+        
+        cart.forEach(item => {
+            message += `\n• ${item.displayName} (${item.quantity}x) - ${item.price * item.quantity} جنيه\n`;
+            message += `---------------------------------\n`;
+        });
+        
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const total = subtotal + SERVICE_FEE;
+        message += `\n💵 *المجموع الفرعي: ${subtotal} جنيه*\n`;
+        message += `🔧 *رسوم الخدمة: ${SERVICE_FEE} جنيه*\n`;
+        message += `💰 *الإجمالي: ${total} جنيه*\n\n`;
+        
+        message += `🪑 *رقم الطاولة:*\n${tableNumber}\n`;
+        message += `---------------------------------\n`;
+        
+        if (customerName) {
+            message += `👤 *اسم العميل:*\n${customerName}\n`;
+            message += `---------------------------------\n`;
+        }
+
+        const hint = document.getElementById('hint').value.trim();
+        if (hint) {
+            message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
+        }
     }
+
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
-    // Clear cart after sending
+    // Clear cart and form after sending
     cart = [];
-    document.getElementById('deliveryAddress').value = '';
-    document.getElementById('PhoneNumber').value = '';
-    document.getElementById('additionalPhone').value = '';
+    if (orderType === 'delivery') {
+        document.getElementById('deliveryAddress').value = '';
+        document.getElementById('PhoneNumber').value = '';
+        document.getElementById('additionalPhone').value = '';
+    } else {
+        document.getElementById('tableNumber').value = '';
+        document.getElementById('customerName').value = '';
+    }
     document.getElementById('hint').value = '';
+    
     updateCart();
     displayMenu(currentCategory);
     toggleCart();
     
     // Show success message
-    alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.');
+    showAlert('تم إرسال طلبك بنجاح!.', 'success');
 }
 
 // Initialize
