@@ -51,7 +51,8 @@
     {
       "name": "وجبه الف هنا",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + محشي + رز بسمتي + عيش + سلطات",
-      "price": 130,
+      "originalPrice": 150,
+      "newPrice": 130,
       "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
     },
     {

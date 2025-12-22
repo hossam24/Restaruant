@@ -35,6 +35,13 @@
             "image": "./imgs/offers/forma.jpeg"
         },
         {
+            "name": "وجبه الف هنا",
+            "description": "ربع فرخه + تمن كفته + محشي + رز + عيش + سلطات",
+            "originalPrice": 150,
+            "newPrice": 130,
+            "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
+        },
+        {
             "name": "وجبة مكس جريل ممبار",
             "description": "ربع فراخ + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
             "originalPrice": 175,
