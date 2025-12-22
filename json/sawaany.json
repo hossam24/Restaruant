@@ -1,6 +1,12 @@
 {
   "sawaany": [
     {
+      "name": "صنيه التوينز",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو ممبار + رز بسمتي عيش سلطات",
+      "price": 330,
+      "image": "./imgs/sawaany/eltweens.jpg"
+    },
+    {
       "name": "صنية فلسطين",
       "description": "نص فرخه + نص كفتة + نص سجق + رز + عيش + سلطات",
       "price": 480,
@@ -9,9 +15,15 @@
     {
       "name": "صنية الرايق",
       "description": "فرخه كاملة + نص كفته + رز + عيش + سلطات",
-      "originalPrice": 550,
+      "originalPrice": 500,
       "newPrice": 450,
       "image": "./imgs/sawaany/elraya2.jpg"
+    },
+    {
+      "name": "صنية اسر",
+      "description": "نص فرخة + ربع ممبار + ربع سجق + ربع كفته + 2 حواوشي + رز + عيش + سلطات",
+      "price": 470,
+      "image": "./imgs/sawaany/aser.jpg"
     },
     {
       "name": "صنية الاكيلة",
@@ -20,16 +32,16 @@
       "image": "./imgs/sawaany/elakela.jpg"
     },
     {
+      "name": "صنية ولاد الاكابر",
+      "description": "نص فرخه + ربع كفته + ربع سجق + ربع ممبار + تمن طرب + 1 بشاميل + رز بسمتى عيش و سلطات",
+      "price": 500,
+      "image": "./imgs/sawaany/elakaber.jpg"
+    },
+    {
       "name": "صنية السوبر",
       "description": "فرخه كاملة + تلت كفته + تمن سجق + تمن ممبار + رز + عيش + سلطات",
       "price": 550,
       "image": "./imgs/sawaany/super.jpg"
-    },
-    {
-      "name": "صنية زينب",
-      "description": "فرخه كاملة + نص كفته + ربع ممبار + نص سجق + ربع كبدة + رز بسمتي",
-      "price": 720,
-      "image": "./imgs/sawaany/zenab.jpg"
     },
     {
       "name": "صنية الصحاب",
@@ -38,16 +50,22 @@
       "image": "./imgs/sawaany/elso7ab.jpg"
     },
     {
+      "name": "صنية عدنان",
+      "description": "فرخه كاملة + نص كفته + ربع ممبار + ربع سجق +رز + عيش + سلطات",
+      "price": 600,
+      "image": "./imgs/sawaany/adnan.jpg"
+    },
+    {
+      "name": "صنية زينب",
+      "description": "فرخه كاملة + نص كفته + ربع ممبار + نص سجق + ربع كبدة + رز بسمتي",
+      "price": 720,
+      "image": "./imgs/sawaany/zenab.jpg"
+    },
+    {
       "name": "صنية العريس",
       "description": "جوز حمام + نص فرخة + ربع كفتة + ربع سجق + ربع ممبار + رز بسمتي",
       "price": 850,
       "image": "./imgs/sawaany/el3arees.jpg"
-    },
-    {
-      "name": "صنية اسر",
-      "description": "نص فرخة + ربع ممبار + ربع سجق + ربع كفته + 2 حواوشي + رز + عيش + سلطات",
-      "price": 470,
-      "image": "./imgs/sawaany/aser.jpg"
     },
     {
       "name": "صنية لمة العيلة",
@@ -60,24 +78,6 @@
       "description": "فرخه ونص + كيلو كفته + ربع سجق + ربع ممبار + رز + عيش + سلطات",
       "price": 1050,
       "image": "./imgs/sawaany/3atawla.jpeg"
-    },
-    {
-      "name": "صنية عدنان",
-      "description": "فرخه+نص كفته + ربع ممبار + ربع سجق +رز بسمتي+عيش وسلطات",
-      "price": 600,
-      "image": "./imgs/sawaany/adnan.jpg"
-    },
-    {
-      "name": "صنية ولاد الاكابر",
-      "description": "نص فرخه + ربع كفته + ربع سجق + ربع ممبار + تمن طرب + 1 بشاميل + رز بسمتى عيش و سلطات",
-      "price": 500,
-      "image": "./imgs/sawaany/elakaber.jpg"
-    },
-    {
-      "name": "صنيه التوينز",
-      "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو ممبار + رز بسمتي عيش سلطات",
-      "price": 330,
-      "image": "./imgs/sawaany/eltweens.jpg"
     }
   ]
 }

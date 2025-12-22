@@ -2,7 +2,7 @@
   "wagabatZawgy": [
     {
       "name": "وجبة التوربيني",
-      "description": "نص فرخه +تمن كفته +تمن سجق و رز وعيش وسلطات",
+      "description": "نص فرخه + تمن كفته + تمن سجق + رز + عيش + سلطات",
       "price": 250,
       "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
     },
@@ -16,15 +16,16 @@
     
    {
       "name": "صنيه التوينز",
-      "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو ممبار + رز بسمتي عيش سلطات",
+      "description": "نص فرخه + ربع كفته + ربع ممبار + رز + عيش + سلطات",
       "price": 330,
       "image": "./imgs/wagabat-zawgy/twenz.jpg"
     },
     {
       "name": "صنيه الروقان",
-      "description": "نص فرخه مشويه + ربع كيلو كفته + ربع كيلو شجق + رز بسمتي عيش سلطات",
-      "price": 330,
-      "image": "./imgs/wagabat-zawgy/rawaqan.jpg"
+      "description": "نص فرخه +ربع كفته+ ربع  سجق +رز +عيش وسلطات",
+      "originalPrice": 400,
+      "newPrice": 330,
+      "image": "./imgs/offers/el-rawkan.jpeg"
     },
     {
       "name": "صنية الحاج رشيدي",
@@ -34,7 +35,7 @@
     },
     {
       "name": "وجبة التوفير",
-      "description": "ربع كيلو كفتة مشوية + ربع كيلو سجق مشوي + ربع استيك",
+      "description": "ربع كفتة + ربع سجق + ربع استيك",
       "price": 370,
       "image": "./imgs/default.png"
     },

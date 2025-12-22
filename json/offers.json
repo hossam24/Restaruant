@@ -21,32 +21,67 @@
             "image": "./imgs/offers/10sand.jpeg"
         },
         {
+            "name": "وجبه كفته و ممبار",
+            "description": "ربع كفته + تمن ممبار + رز + عيش + سلطات",
+            "originalPrice": 150,
+            "newPrice": 130,
+            "image": "./imgs/offers/kofta-w-mombar.jpeg"
+        },
+        {
+            "name": "وجبه الفورمه",
+            "description": "ربع كفته + تمن سجق + رز + عيش + سلطات",
+            "originalPrice": 150,
+            "newPrice": 130,
+            "image": "./imgs/offers/forma.jpeg"
+        },
+        {
+            "name": "وجبة مكس جريل ممبار",
+            "description": "ربع فراخ + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
+            "originalPrice": 175,
+            "newPrice": 150,
+            "image": "./imgs/offers/mix-grill-mombar.jpeg"
+        },
+        {
+            "name": "وجبة مكس جريل حواوشي",
+            "description": "ربع فراخ + 2 كفتة + رغيف حواوشي + رز + عيش + سلطات",
+            "originalPrice": 175,
+            "newPrice": 150,
+            "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
+        },
+        {
             "name": "عرض الجامدين",
-            "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو ممبار بيتي + رز بسمتي +عيش+ سلطات",
+            "description": "نص فرخه + تمن كفته + تمن  ممبار + رز + عيش + سلطات",
             "originalPrice": 300,
             "newPrice": 250,
             "image": "./imgs/offers/gamdeen.jpeg"
         },
         {
+            "name": "وجبة زيزو",
+            "description": "ربع فرخه + تمن كفته + تمن ممبار + واحد بشاميل + عيش + سلطات",
+            "originalPrice": 250,
+            "newPrice": 200,
+            "image": "./imgs/wagabat-fardy/zizo.jpeg"
+        },
+        {
             "name": "عرض الروقان",
             "description": "نص فرخه +ربع كفته+ ربع  سجق +رز +عيش وسلطات",
-            "originalPrice": 350,
+            "originalPrice": 400,
             "newPrice": 330,
             "image": "./imgs/offers/el-rawkan.jpeg"
         },
         {
-            "name": "صنيه الرايق",
-            "originalPrice": 550,
-            "newPrice": 450,
-            "description": "فرخه كامله + نص كيلو كفته مشويه + رز بسمتي + عيش وسلطات",
-            "image": "./imgs/sawaany/elraya2.jpg"
+            "name": "السوبر توفير",
+            "originalPrice": 400,
+            "newPrice": 330,
+            "description": "نص فرخه + نص كفته + رز  + عيش + سلطات",
+            "image": "./imgs/offers/nos-far5a-w-nos-kofta.jpeg"
         },
         {
-            "name": "وجبة زيزو",
-            "description": "ربع فرخه تمن كفته تمن ممبار واحد بشاميل وعيش وسلطات",
-            "originalPrice": 250,
-            "newPrice": 200,
-            "image": "./imgs/wagabat-fardy/zizo.jpeg"
+            "name": "صنيه الرايق",
+            "originalPrice": 500,
+            "newPrice": 450,
+            "description": "فرخه كامله + نص كفته + رز  + عيش + سلطات",
+            "image": "./imgs/offers/elraya2.jpg"
         }
         
     ]
