@@ -6,7 +6,8 @@ async function loadMenu() {
     "wagabat-zawgy",
     "sawaany",
     "edafat",
-    "offers"
+    "offers",
+    "offers-of-year"
   ];
 
   const results = await Promise.all(
@@ -22,7 +23,8 @@ async function loadMenu() {
     wagabatZawgy: results[3].wagabatZawgy,
     sawaany: results[4].sawaany,
     edafat: results[5].edafat,
-    offers: results[6].offers
+    offers: results[6].offers,
+    offersOfYear: results[7].offersOfYear
   };
 }
 
@@ -45,6 +47,7 @@ const SERVICE_FEE = 10; // Service fee for dine-in orders in EGP
 // Load menu and initialize
 loadMenu().then(menu => {
   menuItems = {
+      offersOfYear: addIds(menu.offersOfYear),
     offers: addIds(menu.offers),
     wagabatFardy: addIds(menu.wagabatFardy),
     wagabatZawgy: addIds(menu.wagabatZawgy),
@@ -486,6 +489,7 @@ function sendToWhatsApp() {
     // Validate based on order type
     if (orderType === 'delivery') {
         const address = document.getElementById('deliveryAddress').value.trim();
+        const customerName = document.getElementById('customerName').value.trim();
         const phoneNumberInput = document.getElementById('PhoneNumber').value.trim();
         const additionalPhone = document.getElementById('additionalPhone').value.trim();
         
@@ -493,6 +497,11 @@ function sendToWhatsApp() {
         if (!address) {
             showAlert('من فضلك أدخل عنوان التوصيل!', 'error');
             document.getElementById('deliveryAddress').focus();
+            return;
+        }
+        if(!customerName){
+            showAlert('من فضلك أدخل الاسم!', 'error');
+            document.getElementById('customerName').focus();
             return;
         }
         if(!phoneNumberInput){
@@ -539,6 +548,8 @@ function sendToWhatsApp() {
         
         message += `📍 *عنوان التوصيل:*\n${address}\n`;
         message += `---------------------------------\n`;
+        message += `👤 *اسم العميل:*\n${customerName}\n`;
+        message += `---------------------------------\n`;
         message += `📞 *رقم الهاتف:*\n${phoneNumberInput}\n`;
         if (additionalPhone) {
             message += `\n📱 *رقم هاتف إضافي:*\n${additionalPhone}\n`;
@@ -552,7 +563,7 @@ function sendToWhatsApp() {
 
     } else if (orderType === 'dinein') {
         const tableNumber = document.getElementById('tableNumber').value.trim();
-        const customerName = document.getElementById('customerName').value.trim();
+        // const customerName = document.getElementById('customerName').value.trim();
         
         // Validate required fields
         if (!tableNumber) {

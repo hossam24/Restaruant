@@ -1,11 +1,6 @@
 {
     "offers": [
-        {
-            "name": "عرض اقتصادي",
-            "description": "ربع فرخة + صابع كفتة+ رز+ عيش + سلطات",
-            "price": 95,
-            "image": "./imgs/offers/wagba-eqtsadya.jpg"
-        },
+        
         {
             "name": "عرض 5 ساندوتشات",
             "description": "5 ساندوتشات عباره عن 2 كفتة و 1 كبدة و1 سجق و1 حواوشي",

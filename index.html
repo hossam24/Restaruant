@@ -35,6 +35,7 @@
     <div class="container">
         <div class="category-tabs" id="categoryTabs">
             <button class="category-btn active" onclick="filterCategory('all')">الكل</button>
+            <button class="category-btn" onclick="filterCategory('offersOfYear')">عروض راس السنة</button>
             <button class="category-btn" onclick="filterCategory('offers')">العروض</button>
             <button class="category-btn" onclick="filterCategory('sandwich')">سندوتشات رشيدي</button>
             <button class="category-btn" onclick="filterCategory('mashawy')">مشويات رشيدي</button>
@@ -80,6 +81,10 @@
                         <label>العنوان<span class="required">*</span></label>
                         <textarea id="deliveryAddress" placeholder="أدخل عنوان التوصيل بالتفصيل..."></textarea>
                     </div>
+                     <div class="form-group">
+                        <label>الاسم<span class="required">*</span></label>
+                        <input type="text" id="customerName" placeholder="أدخل اسمك">
+                    </div>
                     <div class="form-group">
                         <label>رقم الهاتف<span class="required">*</span> </label>
                         <input type="tel" id="PhoneNumber" placeholder="مثال: 01234567890">
@@ -97,10 +102,10 @@
                         <label>رقم الطاولة<span class="required">*</span></label>
                         <input type="number" id="tableNumber" placeholder="أدخل رقم الطاولة" min="1">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>اسم العميل (اختياري)</label>
                         <input type="text" id="customerName" placeholder="أدخل اسمك">
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Common Fields -->
