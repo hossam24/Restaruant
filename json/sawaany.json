@@ -1,16 +1,17 @@
 {
   "sawaany": [
-    {
-      "name": "صنيه امم افريقيا",
-      "description": "نص فرخة + ربع كفتة + ربع سجق + ربع ممبار + رز بسمتي عيش سلطات",
-      "price": 400,
-      "image": "./imgs/sawaany/africa.jpeg"
-    },
+    
     {
       "name": "صنيه التوينز",
       "description": "نص فرخة + ربع كفتة + ربع ممبار + رز بسمتي عيش سلطات",
       "price": 330,
       "image": "./imgs/sawaany/eltweens.jpg"
+    },
+    {
+      "name": "صنيه امم افريقيا",
+      "description": "نص فرخة + ربع كفتة + ربع سجق + ربع ممبار + رز بسمتي عيش سلطات",
+      "price": 400,
+      "image": "./imgs/sawaany/africa.jpeg"
     },
     {
       "name": "صنية فلسطين",
