@@ -22,8 +22,7 @@
     {
       "name": "صنية الرايق",
       "description": "فرخة كاملة + نص كفتة + رز + عيش + سلطات",
-      "originalPrice": 500,
-      "newPrice": 450,
+      "price": 480,
       "image": "./imgs/sawaany/elraya2.jpg"
     },
     {
@@ -47,7 +46,7 @@
     {
       "name": "صنية السوبر",
       "description": "فرخة كاملة + تلت كفتة + تمن سجق + تمن ممبار + رز + عيش + سلطات",
-      "price": 515,
+      "price": 530,
       "image": "./imgs/sawaany/super.jpg"
     },
     {
@@ -56,12 +55,7 @@
       "price": 570,
       "image": "./imgs/sawaany/elso7ab.jpg"
     },
-    {
-      "name": "صنية عدنان",
-      "description": "فرخة كاملة + نص كفتة + ربع ممبار + ربع سجق +رز + عيش + سلطات",
-      "price": 600,
-      "image": "./imgs/sawaany/adnan.jpg"
-    },
+
     {
       "name": "صنية زينب",
       "description": "فرخة كاملة + نص كفتة + ربع ممبار + نص سجق + ربع كبدة + رز بسمتي",
