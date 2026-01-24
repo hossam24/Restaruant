@@ -1,13 +1,6 @@
 {
   "offers": [
     {
-      "name": "عرض 10 ساندوتشات",
-      "description": "10 ساندوتشات عباره عن 4 كفتة و 2 كبدة و2 سجق و2 حواوشي",
-      "originalPrice": 300,
-      "newPrice": 250,
-      "image": "./imgs/offers/10sand.jpeg"
-    },
-    {
       "name": "وجبه كفتة و ممبار",
       "description": "ربع كفتة + تمن ممبار + رز + عيش + سلطات",
       "originalPrice": 150,
@@ -43,6 +36,13 @@
       "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
     },
     {
+      "name": "وجبة زيزو",
+      "description": "ربع فرخة + تمن كفتة + تمن ممبار + واحد بشاميل + عيش + سلطات",
+      "originalPrice": 250,
+      "newPrice": 200,
+      "image": "./imgs/wagabat-fardy/zizo.jpeg"
+    },
+    {
       "name": "عرض الجامدين",
       "description": "نص فرخة + تمن كفتة + تمن  ممبار + رز + عيش + سلطات",
       "originalPrice": 300,
@@ -50,11 +50,18 @@
       "image": "./imgs/offers/gamdeen.jpeg"
     },
     {
-      "name": "وجبة زيزو",
-      "description": "ربع فرخة + تمن كفتة + تمن ممبار + واحد بشاميل + عيش + سلطات",
-      "originalPrice": 250,
-      "newPrice": 200,
-      "image": "./imgs/wagabat-fardy/zizo.jpeg"
+      "name": "عرض  الجديد شديد",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + رز + عيش + سلطات",
+      "originalPrice": 300,
+      "newPrice": 250,
+      "image": "./imgs/wagabat-fardy/algada3.jpeg"
+    },
+    {
+      "name": "عرض 10 ساندوتشات",
+      "description": "10 ساندوتشات عباره عن 4 كفتة و 2 كبدة و2 سجق و2 حواوشي",
+      "originalPrice": 300,
+      "newPrice": 250,
+      "image": "./imgs/offers/10sand.jpeg"
     },
     {
       "name": "عرض الروقان",
