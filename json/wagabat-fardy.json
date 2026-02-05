@@ -9,7 +9,7 @@
     {
       "name": "وجبه الف هنا",
       "description": "ربع فرخة مشويه + تمن كيلو كفتة + محشي + رز بسمتي + عيش + سلطات",
-      "price": 130,
+      "price": 135,
       "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
     },
     {
@@ -51,7 +51,7 @@
     {
       "name": "وجبه الجدع",
       "description": "نص فرخه مشويه + تمن كيلو كفته چوسي + رز بسمتي + عيش + سلطات",
-      "price": 195,
+      "price": 200,
       "image": "./imgs/wagabat-fardy/algada3.jpeg"
     },
     {
@@ -63,7 +63,7 @@
     {
       "name": "ميكس السعادة",
       "description": "ربع فراخ + تمن كفتة + تمن سجق + تمن ممبار",
-      "price": 195,
+      "price": 200,
       "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
     },
     {

@@ -3,28 +3,28 @@
     {
       "name": "وجبة التوربيني",
       "description": "نص فرخة + تمن كفتة + تمن سجق + رز + عيش + سلطات",
-      "price": 250,
+      "price": 260,
       "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
     },
-    
+
     {
       "name": "وجبه الدبل",
       "description": "نص فرخة + 2 حواوشي + 2 كفتة + رز بسمتي + عيش + سلطات",
       "price": 260,
       "image": "./imgs/offers-of-year/double.jpeg"
     },
-    
-   {
+
+    {
       "name": "صنيه التوينز",
       "description": "نص فرخة + ربع كفتة + ربع ممبار + رز + عيش + سلطات",
-      "price": 330,
+      "price": 340,
       "image": "./imgs/wagabat-zawgy/twenz.jpg"
     },
     {
       "name": "صنيه الروقان",
       "description": "نص فرخة +ربع كفتة+ ربع  سجق +رز +عيش وسلطات",
       "originalPrice": 400,
-      "newPrice": 330,
+      "newPrice": 340,
       "image": "./imgs/offers/el-rawkan.jpeg"
     },
     {
@@ -45,7 +45,5 @@
       "price": 540,
       "image": "./imgs/default.png"
     }
-
-    
   ]
 }

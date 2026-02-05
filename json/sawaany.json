@@ -1,10 +1,9 @@
 {
   "sawaany": [
-    
     {
       "name": "صنيه التوينز",
       "description": "نص فرخة + ربع كفتة + ربع ممبار + رز بسمتي عيش سلطات",
-      "price": 330,
+      "price": 340,
       "image": "./imgs/sawaany/eltweens.jpg"
     },
     {
@@ -40,7 +39,7 @@
     {
       "name": "صنية ولاد الاكابر",
       "description": "نص فرخة + ربع كفتة + ربع سجق + ربع ممبار + تمن طرب + 1 بشاميل + رز بسمتى عيش و سلطات",
-      "price": 500,
+      "price": 550,
       "image": "./imgs/sawaany/elakaber.jpg"
     },
     {

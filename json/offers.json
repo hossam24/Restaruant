@@ -18,7 +18,7 @@
       "name": "وجبه الف هنا",
       "description": "ربع فرخة + تمن كفتة + محشي + رز + عيش + سلطات",
       "originalPrice": 150,
-      "newPrice": 130,
+      "newPrice": 135,
       "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
     },
     {
@@ -39,21 +39,21 @@
       "name": "وجبة زيزو",
       "description": "ربع فرخة + تمن كفتة + تمن ممبار + واحد بشاميل + عيش + سلطات",
       "originalPrice": 250,
-      "newPrice": 200,
+      "newPrice": 215,
       "image": "./imgs/wagabat-fardy/zizo.jpeg"
     },
     {
       "name": "عرض الجامدين",
       "description": "نص فرخة + تمن كفتة + تمن  ممبار + رز + عيش + سلطات",
       "originalPrice": 300,
-      "newPrice": 250,
+      "newPrice": 260,
       "image": "./imgs/offers/gamdeen.jpeg"
     },
     {
       "name": "عرض  الجديد شديد",
       "description": "نص فرخه مشويه + ربع كيلو كفته + رز + عيش + سلطات",
       "originalPrice": 300,
-      "newPrice": 250,
+      "newPrice": 260,
       "image": "./imgs/wagabat-fardy/algada3.jpeg"
     },
     {
@@ -67,7 +67,7 @@
       "name": "عرض الروقان",
       "description": "نص فرخة +ربع كفتة+ ربع  سجق +رز +عيش وسلطات",
       "originalPrice": 400,
-      "newPrice": 330,
+      "newPrice": 340,
       "image": "./imgs/offers/el-rawkan.jpeg"
     },
     {
