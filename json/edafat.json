@@ -11,26 +11,6 @@
       "image": "./imgs/additionals/basmaty.jpg"
     },
     {
-      "name": "سلطة خضراء",
-      "price": 10,
-      "image": "./imgs/additionals/salta.webp"
-    },
-    {
-      "name": "طحينة",
-      "price": 7,
-      "image": "./imgs/additionals/t7ena.jpg"
-    },
-    {
-      "name": "مخلل",
-      "price": 5,
-      "image": "./imgs/additionals/m5ll.jpg"
-    },
-    {
-      "name": "بابا غنوج",
-      "price": 10,
-      "image": "./imgs/additionals/8nog.webp"
-    },
-    {
       "name": "بطاطس فارم",
       "price": 25,
       "image": "./imgs/additionals/farm.jpg"
@@ -41,9 +21,9 @@
       "image": "./imgs/additionals/v-seven.jpg"
     },
     {
-      "name": "براد شاي",
-      "price": 20,
-      "image": "./imgs/additionals/tea.webp"
+      "name": "حواوشي لحمة",
+      "price": 30,
+      "image": "./imgs/sandwich/hawawshi.jpg"
     },
     {
       "name": "مياه معدنية",
