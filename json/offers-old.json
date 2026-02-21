@@ -1,0 +1,88 @@
+{
+  "offers": [
+    {
+      "name": "وجبه كفتة و ممبار",
+      "description": "ربع كفتة + تمن ممبار + رز + عيش + سلطات",
+      "originalPrice": 150,
+      "newPrice": 130,
+      "image": "./imgs/offers/kofta-w-mombar.jpeg"
+    },
+    {
+      "name": "وجبه الفورمه",
+      "description": "ربع كفتة + تمن سجق + رز + عيش + سلطات",
+      "originalPrice": 150,
+      "newPrice": 130,
+      "image": "./imgs/offers/forma.jpeg"
+    },
+    {
+      "name": "وجبه الف هنا",
+      "description": "ربع فرخة + تمن كفتة + محشي + رز + عيش + سلطات",
+      "originalPrice": 150,
+      "newPrice": 135,
+      "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
+    },
+    {
+      "name": "وجبة مكس جريل ممبار",
+      "description": "ربع فراخ + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
+      "originalPrice": 175,
+      "newPrice": 150,
+      "image": "./imgs/offers/mix-grill-mombar.jpeg"
+    },
+    {
+      "name": "وجبة مكس جريل حواوشي",
+      "description": "ربع فراخ + تمن كفتة + رغيف حواوشي + رز + عيش + سلطات",
+      "originalPrice": 175,
+      "newPrice": 150,
+      "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
+    },
+    {
+      "name": "وجبة زيزو",
+      "description": "ربع فرخة + تمن كفتة + تمن ممبار + واحد بشاميل + عيش + سلطات",
+      "originalPrice": 250,
+      "newPrice": 215,
+      "image": "./imgs/wagabat-fardy/zizo.jpeg"
+    },
+    {
+      "name": "عرض الجامدين",
+      "description": "نص فرخة + تمن كفتة + تمن  ممبار + رز + عيش + سلطات",
+      "originalPrice": 300,
+      "newPrice": 260,
+      "image": "./imgs/offers/gamdeen.jpeg"
+    },
+    {
+      "name": "عرض  الجديد شديد",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + رز + عيش + سلطات",
+      "originalPrice": 300,
+      "newPrice": 260,
+      "image": "./imgs/wagabat-fardy/algada3.jpeg"
+    },
+    {
+      "name": "عرض 10 ساندوتشات",
+      "description": "10 ساندوتشات عباره عن 4 كفتة و 2 كبدة و2 سجق و2 حواوشي",
+      "originalPrice": 300,
+      "newPrice": 250,
+      "image": "./imgs/offers/10sand.jpeg"
+    },
+    {
+      "name": "عرض الروقان",
+      "description": "نص فرخة +ربع كفتة+ ربع  سجق +رز +عيش وسلطات",
+      "originalPrice": 400,
+      "newPrice": 340,
+      "image": "./imgs/offers/el-rawkan.jpeg"
+    },
+    {
+      "name": "السوبر توفير",
+      "originalPrice": 400,
+      "newPrice": 330,
+      "description": "نص فرخة + نص كفتة + رز  + عيش + سلطات",
+      "image": "./imgs/offers/nos-far5a-w-nos-kofta.jpeg"
+    },
+    {
+      "name": "صنيه الرايق",
+      "originalPrice": 500,
+      "newPrice": 450,
+      "description": "فرخة كامله + نص كفتة + رز  + عيش + سلطات",
+      "image": "./imgs/offers/elraya2.jpg"
+    }
+  ]
+}
