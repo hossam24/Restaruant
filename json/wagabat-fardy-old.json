@@ -1,0 +1,82 @@
+{
+  "wagabatFardy": [
+    {
+      "name": "مكس مشوي",
+      "description": "ربع فرخة + تمن كفتة",
+      "price": 130,
+      "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
+    },
+    {
+      "name": "وجبه الف هنا",
+      "description": "ربع فرخة مشويه + تمن كيلو كفتة + محشي + رز بسمتي + عيش + سلطات",
+      "price": 135,
+      "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
+    },
+    {
+      "name": "وجبة كفتة وممبار",
+      "description": "ربع كيلو كفتة + تمن كيلو ممبار",
+      "price": 130,
+      "image": "./imgs/wagabat-fardy/kofta-mombar.jpg"
+    },
+    {
+      "name": "وجبة الفورمة",
+      "description": "ربع كيلو كفتة مشوية + تمن كيلو سجق مشوي",
+      "price": 130,
+      "image": "./imgs/wagabat-fardy/elforma.jpg"
+    },
+    {
+      "name": "وجبة كفتة وشيش",
+      "description": "تمن كفتة + ربع كيلو شيش طاووق",
+      "price": 140,
+      "image": "./imgs/wagabat-fardy/kofta-shesh.jpg"
+    },
+    {
+      "name": "ميكس لحوم",
+      "description": "تمن لحمة ستيك + تمن كفتة مشوية + تمن سجق مشوي",
+      "price": 180,
+      "image": "./imgs/wagabat-fardy/mix-l7oom.jpeg"
+    },
+    {
+      "name": "وجبة رعد",
+      "description": "ربع فراخ مشوي + تمن كفتة + تمن ممبار + رغيف حواوشي",
+      "price": 185,
+      "image": "./imgs/wagabat-fardy/ra3d.jpg"
+    },
+    {
+      "name": "وجبة برق",
+      "description": "ربع فراخ مشوي + تمن كفتة + تمن سجق + رغيف حواوشي",
+      "price": 185,
+      "image": "./imgs/wagabat-fardy/barq.jpeg"
+    },
+    {
+      "name": "وجبه الجدع",
+      "description": "نص فرخه مشويه + تمن كيلو كفته چوسي + رز بسمتي + عيش + سلطات",
+      "price": 200,
+      "image": "./imgs/wagabat-fardy/algada3.jpeg"
+    },
+    {
+      "name": "وجبه الجيار",
+      "description": "ربع كيلو كفته مشويه + تمن كيلو سجق مشوي +تمن كيلو ممبار  + بطاطس +رز بسمتي + عيش + سلطات",
+      "price": 195,
+      "image": "./imgs/wagabat-fardy/algayar.jpeg"
+    },
+    {
+      "name": "ميكس السعادة",
+      "description": "ربع فراخ + تمن كفتة + تمن سجق + تمن ممبار",
+      "price": 200,
+      "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
+    },
+    {
+      "name": "وجبة البطوله",
+      "description": "ربع فرخه + تمن كفته + تمن ممبار + بطاطس + رز + عيش + سلطات",
+      "price": 200,
+      "image": "./imgs/wagabat-fardy/elbtola.jpeg"
+    },
+    {
+      "name": "وجبة الخميس",
+      "description": "فرد حمام + تمن كفتة + رز بسمتي + عيش + سلطات",
+      "price": 220,
+      "image": "./imgs/wagabat-fardy/el5ames.jpeg"
+    }
+  ]
+}

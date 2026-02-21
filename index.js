@@ -1,14 +1,15 @@
 async function loadMenu() {
-  const files = [
-    "sandwich",
-    "mashawy",
-    "wagabat-fardy",
-    "wagabat-zawgy",
-    "sawaany",
-    "edafat",
-    "offers",
-    "offers-of-year"
-  ];
+    // "sandwich",
+    // "offers-of-year"
+    const files = [
+        "et3am",
+        "mashawy",
+        "wagabat-fardy",
+        "wagabat-zawgy",
+        "sawaany",
+        "edafat",
+        "offers",
+    ];
 
   const results = await Promise.all(
     files.map(file =>
@@ -16,16 +17,17 @@ async function loadMenu() {
     )
   );
 
-  return {
-    sandwich: results[0].sandwich,
-    mashawy: results[1].mashawy,
-    wagabatFardy: results[2].wagabatFardy,
-    wagabatZawgy: results[3].wagabatZawgy,
-    sawaany: results[4].sawaany,
-    edafat: results[5].edafat,
-    offers: results[6].offers,
-    offersOfYear: results[7].offersOfYear
-  };
+    // sandwich: results[0].sandwich,
+    // offersOfYear: results[7].offersOfYear
+    return {
+        et3am: results[0].et3am,
+        mashawy: results[1].mashawy,
+        wagabatFardy: results[2].wagabatFardy,
+        wagabatZawgy: results[3].wagabatZawgy,
+        sawaany: results[4].sawaany,
+        edafat: results[5].edafat,
+        offers: results[6].offers,
+    };
 }
 
 let idx=1;
@@ -46,15 +48,16 @@ const SERVICE_FEE = 10; // Service fee for dine-in orders in EGP
 
 // Load menu and initialize
 loadMenu().then(menu => {
-  menuItems = {
-      offersOfYear: addIds(menu.offersOfYear),
-    offers: addIds(menu.offers),
-    wagabatFardy: addIds(menu.wagabatFardy),
-    wagabatZawgy: addIds(menu.wagabatZawgy),
-    sawaany: addIds(menu.sawaany),
-    mashawy: addIds(menu.mashawy),
-    sandwich: addIds(menu.sandwich),
-    edafat: addIds(menu.edafat),
+    // offersOfYear: addIds(menu.offersOfYear),
+    // sandwich: addIds(menu.sandwich),
+    menuItems = {
+        mashawy: addIds(menu.mashawy),
+        et3am: addIds(menu.et3am),
+        offers: addIds(menu.offers),
+        wagabatFardy: addIds(menu.wagabatFardy),
+        wagabatZawgy: addIds(menu.wagabatZawgy),
+        sawaany: addIds(menu.sawaany),
+        edafat: addIds(menu.edafat),
   };
   
   // Initialize display after menu is loaded

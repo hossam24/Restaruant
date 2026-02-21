@@ -1,30 +1,16 @@
 {
   "wagabatZawgy": [
     {
-      "name": "وجبة التوربيني",
-      "description": "نص فرخة + تمن كفتة + تمن سجق + رز + عيش + سلطات",
-      "price": 260,
-      "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
-    },
-
-    {
-      "name": "وجبه الدبل",
-      "description": "نص فرخة + 2 حواوشي + 2 كفتة + رز بسمتي + عيش + سلطات",
-      "price": 260,
-      "image": "./imgs/offers-of-year/double.jpeg"
-    },
-
-    {
       "name": "صنيه التوينز",
       "description": "نص فرخة + ربع كفتة + ربع ممبار + رز + عيش + سلطات",
-      "price": 340,
+      "price": 350,
       "image": "./imgs/wagabat-zawgy/twenz.jpg"
     },
     {
       "name": "صنيه الروقان",
       "description": "نص فرخة +ربع كفتة+ ربع  سجق +رز +عيش وسلطات",
       "originalPrice": 400,
-      "newPrice": 340,
+      "newPrice": 350,
       "image": "./imgs/offers/el-rawkan.jpeg"
     },
     {
@@ -32,18 +18,6 @@
       "description": "نص فرخة + ربع كفتة + تمن سجق + تمن ممبار",
       "price": 360,
       "image": "./imgs/wagabat-zawgy/7ag-rasheedy.jpeg"
-    },
-    {
-      "name": "وجبة التوفير",
-      "description": "ربع كفتة + ربع سجق + ربع استيك",
-      "price": 370,
-      "image": "./imgs/default.png"
-    },
-    {
-      "name": "وجبة ليلة العمر",
-      "description": "جوز حمام + ربع ممبار + ربع كفتة",
-      "price": 540,
-      "image": "./imgs/default.png"
     }
   ]
 }
