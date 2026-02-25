@@ -486,7 +486,7 @@ function sendToWhatsApp() {
         return;
     }
     
-    const phoneNumber = '201500909753';
+    const phoneNumber = '201501108083';
     let message = '🍽️ *طلب جديد من مطعم راشيدي*\n\n';
     
     // Validate based on order type
