@@ -29,6 +29,12 @@
       "description": "فرخة كاملة + كيلو الا ربع كفتة + ربع سجق + ربع ممبار + 2 حواوشي + رز + عيش + سلطات",
       "price": 950,
       "image": "./imgs/sawaany/lmeh-aleyla.jpg"
+    },
+    {
+      "name": "صنية العتاولة",
+      "description": "فرخه ونص + كيلو كفتة + نص ممبار + تلت سجق + رز بسمتي عيش + سلطاات",
+      "price": 1200,
+      "image": "./imgs/sawaany/3atawla.jpeg"
     }
   ]
 }
