@@ -3,20 +3,20 @@
     {
       "name": "عرض اقتصادي",
       "description": "ربع فرخة + صابع كفتة+ رز+ عيش + سلطات",
-      "price": 95,
+      "price": 100,
       "image": "./imgs/offers-of-year/eqtsady.jpeg"
     },
     {
       "name": "وجبه الف هنا",
       "description": "ربع فرخة + تمن كفتة + محشي + رز + عيش + سلطات",
       "originalPrice": 150,
-      "newPrice": 135,
+      "newPrice": 140,
       "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
     },
     {
       "name": "وجبه الجدع",
       "description": "نص فرخه مشويه + تمن كيلو كفته چوسي + رز بسمتي + عيش + سلطات",
-      "price": 200,
+      "price": 220,
       "image": "./imgs/wagabat-fardy/algada3.jpeg"
     },
     {
@@ -37,7 +37,7 @@
       "name": "عرض  الجديد شديد",
       "description": "نص فرخه مشويه + ربع كيلو كفته + رز + عيش + سلطات",
       "originalPrice": 300,
-      "newPrice": 260,
+      "newPrice": 270,
       "image": "./imgs/wagabat-fardy/algada3.jpeg"
     }
   ]
