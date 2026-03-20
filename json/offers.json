@@ -1,44 +1,40 @@
 {
   "offers": [
     {
-      "name": "عرض اقتصادي",
-      "description": "ربع فرخة + صابع كفتة+ رز+ عيش + سلطات",
-      "price": 100,
-      "image": "./imgs/offers-of-year/eqtsady.jpeg"
+      "name": "عرض 10 ساندوتشات",
+      "description": "10 ساندوتشات عباره عن 4 كفتة و 2 كبدة و2 سجق و2 حواوشي",
+      "originalPrice": 350,
+      "newPrice": 299,
+      "image": "./imgs/offers/10sand.jpeg"
     },
     {
-      "name": "وجبه الف هنا",
-      "description": "ربع فرخة + تمن كفتة + محشي + رز + عيش + سلطات",
-      "originalPrice": 150,
-      "newPrice": 140,
-      "image": "./imgs/wagabat-fardy/alf-hana.jpeg"
+      "name": "وجبة مكس جريل ممبار",
+      "description": "ربع فراخ + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 175,
+      "image": "./imgs/offers/mix-grill-mombar.jpeg"
     },
     {
-      "name": "وجبه الجدع",
-      "description": "نص فرخه مشويه + تمن كيلو كفته چوسي + رز بسمتي + عيش + سلطات",
-      "price": 220,
-      "image": "./imgs/wagabat-fardy/algada3.jpeg"
-    },
-    {
-      "name": "عرض الجامدين",
-      "description": "نص فرخة + تمن كفتة + تمن  ممبار + رز + عيش + سلطات",
-      "originalPrice": 300,
-      "newPrice": 260,
-      "image": "./imgs/offers/gamdeen.jpeg"
+      "name": "وجبة مكس جريل حواوشي",
+      "description": "ربع فراخ + تمن كفتة + رغيف حواوشي + رز + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 175,
+      "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
     },
     {
       "name": "وجبة التوربيني",
-      "description": "نص فرخة + تمن كفتة + تمن سجق + رز + عيش + سلطات",
+      "description": "نص فرخة + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
       "originalPrice": 300,
-      "newPrice": 260,
+      "newPrice": 270,
       "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
     },
     {
-      "name": "عرض  الجديد شديد",
-      "description": "نص فرخه مشويه + ربع كيلو كفته + رز + عيش + سلطات",
-      "originalPrice": 300,
-      "newPrice": 270,
-      "image": "./imgs/wagabat-fardy/algada3.jpeg"
+      "name": "صنية لمة العيلة",
+      "description": "فرخة كاملة + كيلو الا ربع كفتة + ربع سجق + ربع ممبار + 2 حواوشي + رز + عيش + سلطات",
+      "originalPrice": 1050,
+      "newPrice": 950,
+      "image": "./imgs/sawaany/lmeh-aleyla.jpg"
     }
+    
   ]
 }

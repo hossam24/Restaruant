@@ -1,0 +1,50 @@
+{
+  "mashawy": [
+    {
+      "name": "فرخة مشوية كاملة",
+      "image": "./imgs/mashawy/far5a.jpeg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 300 }
+      ]
+    },
+    {
+      "name": "كفتة مشوية",
+      "image": "./imgs/mashawy/kofta.jpg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 400 }
+      ]
+    },
+    {
+      "name": "سجق",
+      "image": "./imgs/mashawy/sgok2.jpeg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 360}
+      ]
+    },
+    {
+      "name": " كباب استيك",
+      "image": "./imgs/mashawy/steak.jpeg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 750 }
+      ]
+    },
+    {
+      "name": " ممبار بلدي",
+      "image": "./imgs/mashawy/mombar.jpg",
+      "hasSizes": true,
+      "sizes": [
+        { "id": "kilo", "name": "كيلو", "price": 320 }
+      ]
+    },
+    {
+      "name": "نص مشكل",
+      "description": "ربع ستيك + ربع كفتة + رز + عيش + سلطات",
+      "price": 330,
+      "image": "./imgs/mashawy/nos-mshakel.jpeg"
+    }
+  ]
+}

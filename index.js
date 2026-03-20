@@ -2,13 +2,13 @@ async function loadMenu() {
     // "sandwich",
     // "offers-of-year"
     const files = [
-        "et3am",
+        "sandwich",
         "mashawy",
         "wagabat-fardy",
         "wagabat-zawgy",
         "sawaany",
         "edafat",
-        "offers",
+        "offers"
     ];
 
   const results = await Promise.all(
@@ -20,7 +20,7 @@ async function loadMenu() {
     // sandwich: results[0].sandwich,
     // offersOfYear: results[7].offersOfYear
     return {
-        et3am: results[0].et3am,
+        sandwich: results[0].sandwich,
         mashawy: results[1].mashawy,
         wagabatFardy: results[2].wagabatFardy,
         wagabatZawgy: results[3].wagabatZawgy,
@@ -51,11 +51,11 @@ loadMenu().then(menu => {
     // offersOfYear: addIds(menu.offersOfYear),
     // sandwich: addIds(menu.sandwich),
     menuItems = {
-        mashawy: addIds(menu.mashawy),
-        et3am: addIds(menu.et3am),
         offers: addIds(menu.offers),
+        sandwich: addIds(menu.sandwich),
         wagabatFardy: addIds(menu.wagabatFardy),
         wagabatZawgy: addIds(menu.wagabatZawgy),
+        mashawy: addIds(menu.mashawy),
         sawaany: addIds(menu.sawaany),
         edafat: addIds(menu.edafat),
   };
@@ -479,6 +479,18 @@ function toggleCart() {
     modal.classList.toggle('active');
 }
 
+// Google Sheets integration
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwS4nd_xAnbUJzAHl-URnyYOubnMgIg10PGxjVVZKFRluh3RBi3FrOWsepMtBBRx38/exec';
+
+function saveToGoogleSheets(orderData) {
+    if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') return;
+    fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(orderData),
+    }).catch(() => {}); // silent fail — WhatsApp order still goes through
+}
+
 // Send to WhatsApp
 function sendToWhatsApp() {
     if (cart.length === 0) {
@@ -564,6 +576,18 @@ function sendToWhatsApp() {
             message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
         }
 
+        const itemsSummary = cart.map(item => `${item.displayName} (${item.quantity}x) - ${item.price * item.quantity} جنيه`).join(' | ');
+        saveToGoogleSheets({
+            customerName: customerName,
+            phone: phoneNumberInput,
+            additionalPhone: additionalPhone,
+            address: address,
+            items: itemsSummary,
+            total: total + ' جنيه',
+            notes: hint,
+            orderType: 'توصيل',
+        });
+
     } else if (orderType === 'dinein') {
         const tableNumber = document.getElementById('tableNumber').value.trim();
         // const customerName = document.getElementById('customerName').value.trim();
@@ -601,6 +625,18 @@ function sendToWhatsApp() {
         if (hint) {
             message += `📝 *ملاحظات إضافية:*\n${hint}\n`;
         }
+
+        const dineinItemsSummary = cart.map(item => `${item.displayName} (${item.quantity}x) - ${item.price * item.quantity} جنيه`).join(' | ');
+        saveToGoogleSheets({
+            customerName: tableNumber,
+            phone: '',
+            additionalPhone: '',
+            address: 'طاولة رقم ' + tableNumber,
+            items: dineinItemsSummary,
+            total: total + ' جنيه',
+            notes: hint,
+            orderType: 'طاولة بالمطعم',
+        });
     }
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
