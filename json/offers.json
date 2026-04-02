@@ -1,40 +1,60 @@
 {
   "offers": [
     {
-      "name": "عرض 10 ساندوتشات",
-      "description": "10 ساندوتشات عباره عن 4 كفتة و 2 كبدة و2 سجق و2 حواوشي",
+      "name": "عرض 5 ساندوتشات",
+      "description": "٢ كفته + ١ كبده + ١ حواوشي + ١ سجق",
+      "originalPrice": 200,
+      "newPrice": 149,
+      "image": "./imgs/offers/5sand.jpeg"
+    },
+    {
+      "name": "وجبه الأقتصادي",
+      "description": "ربع فرخه مشويه + صباع كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 130,
+      "newPrice": 107,
+      "image": "./imgs/offers/wagba-eqtsadya.jpg"
+    },
+    {
+      "name": "وجبه الف هنا",
+      "description": "ربع فرخه مشويه + تمن كيلو كفته + ممبار + رز بسمتي + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/offers/wagba-eqtsadya.jpg"
+    },
+    {
+      "name": "صنيه الجديد شديد",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 310,
+      "newPrice": 275,
+      "image": "./imgs/offers/elgded-shdeed.jpeg"
+    },
+    {
+      "name": "صنيه الحج رشيدي",
+      "description": "نص فرخه مشويه + ربع كيلو كفته + تمن سجق + تمن ممبار بيتي + رز بسمتي + عيش + سلطات",
+      "originalPrice": 410,
+      "newPrice": 375,
+      "image": "./imgs/wagabat-zawgy/7ag-rasheedy.jpeg"
+    },
+    {
+      "name": "صنيه العيد الصغير",
+      "description": "ربع فرخه مشويه + ربع كيلو كفته + تمن طرب ضاني + رغيف حواوشي + رز بسمتي + عيش + سلطات",
       "originalPrice": 350,
       "newPrice": 299,
-      "image": "./imgs/offers/10sand.jpeg"
+      "image": "./imgs/offers/eid-so8yar.png"
     },
     {
-      "name": "وجبة مكس جريل ممبار",
-      "description": "ربع فراخ + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
-      "originalPrice": 200,
-      "newPrice": 175,
-      "image": "./imgs/offers/mix-grill-mombar.jpeg"
+      "name": "صنيه الرايق",
+      "description": "فرخه كامله مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 600,
+      "newPrice": 500,
+      "image": "./imgs/sawaany/elraya2.jpg"
     },
     {
-      "name": "وجبة مكس جريل حواوشي",
-      "description": "ربع فراخ + تمن كفتة + رغيف حواوشي + رز + عيش + سلطات",
-      "originalPrice": 200,
-      "newPrice": 175,
-      "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
-    },
-    {
-      "name": "وجبة التوربيني",
-      "description": "نص فرخة + تمن كفتة + تمن ممبار + رز + عيش + سلطات",
-      "originalPrice": 300,
-      "newPrice": 270,
-      "image": "./imgs/wagabat-zawgy/torbeny.jpeg"
-    },
-    {
-      "name": "صنية لمة العيلة",
-      "description": "فرخة كاملة + كيلو الا ربع كفتة + ربع سجق + ربع ممبار + 2 حواوشي + رز + عيش + سلطات",
-      "originalPrice": 1050,
-      "newPrice": 950,
-      "image": "./imgs/sawaany/lmeh-aleyla.jpg"
+      "name": "صنيه السوبر",
+      "description": "فرخه كامله مشويه + تلت كيلو كفته + تمن كيلو سجق + تمن ممبار + رز بسمتي + عيش + سلطات",
+      "originalPrice": 600,
+      "newPrice": 550,
+      "image": "./imgs/sawaany/super.jpg"
     }
-    
   ]
 }
