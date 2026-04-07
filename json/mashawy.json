@@ -5,9 +5,9 @@
       "image": "./imgs/mashawy/far5a.jpeg",
       "hasSizes": true,
       "sizes": [
-        { "id": "kilo", "name": "كيلو", "price": 300 },
-        { "id": "half", "name": "نص كيلو", "price": 160 },
-        { "id": "quarter", "name": "ربع كيلو", "price": 85 }
+        { "id": "kilo", "name": "كيلو", "price": 350 },
+        { "id": "half", "name": "نص كيلو", "price": 175 },
+        { "id": "quarter", "name": "ربع كيلو", "price": 87.5 }
       ]
     },
     {
