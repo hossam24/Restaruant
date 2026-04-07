@@ -15,11 +15,25 @@
       "image": "./imgs/offers/wagba-eqtsadya.jpg"
     },
     {
+      "name": "مكس مشوي",
+      "description": "ربع فرخة + تمن كفتة",
+      "originalPrice": 150,
+      "newPrice": 130,
+      "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
+    },
+    {
       "name": "وجبه الف هنا",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + ممبار + رز بسمتي + عيش + سلطات",
       "originalPrice": 200,
       "newPrice": 150,
       "image": "./imgs/offers/wagba-eqtsadya.jpg"
+    },
+    {
+      "name": "وجبه البطوله",
+      "description": "ربع فرخه مشويه + تمن كيلو كفته + تمن طرب + بطاطس + رز بسمتي + عيش + سلطات",
+      "originalPrice": 275,
+      "newPrice": 225,
+      "image": "./imgs/offers/elbtola.jpg"
     },
     {
       "name": "صنيه الجديد شديد",
