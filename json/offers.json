@@ -26,7 +26,7 @@
       "description": "ربع فرخه مشويه + تمن كيلو كفته + ممبار + رز بسمتي + عيش + سلطات",
       "originalPrice": 200,
       "newPrice": 150,
-      "image": "./imgs/offers/wagba-eqtsadya.jpg"
+      "image": "./imgs/offers/alf-hana.jpeg"
     },
     {
       "name": "وجبه البطوله",
@@ -60,7 +60,7 @@
       "name": "صنيه الرايق",
       "description": "فرخه كامله مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 600,
-      "newPrice": 500,
+      "newPrice": 520,
       "image": "./imgs/sawaany/elraya2.jpg"
     },
     {
