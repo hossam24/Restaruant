@@ -1,11 +1,6 @@
 {
   "wagabatFardy": [
-    {
-      "name": "مكس مشوي",
-      "description": "ربع فرخة + تمن كفتة",
-      "price": 145,
-      "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
-    },
+    
     {
       "name": "وجبة كفتة وممبار",
       "description": "ربع كيلو كفتة + تمن كيلو ممبار",
@@ -32,13 +27,13 @@
     },
     {
       "name": "وجبة رعد",
-      "description": "ربع فراخ مشوي + تمن كفتة + تمن ممبار + رغيف حواوشي",
+      "description": "ربع فرخة + تمن كفتة + تمن ممبار + رغيف حواوشي",
       "price": 200,
       "image": "./imgs/wagabat-fardy/ra3d.jpg"
     },
     {
       "name": "ميكس السعادة",
-      "description": "ربع فراخ + تمن كفتة + تمن سجق + تمن ممبار",
+      "description": "ربع فرخة + تمن كفتة + تمن سجق + تمن ممبار",
       "price": 225,
       "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
     }

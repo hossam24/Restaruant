@@ -43,6 +43,7 @@ let menuItems = {};
 let cart = [];
 let currentCategory = 'all';
 let selectedSizes = {};
+let selectedChickenParts = {};
 let orderType = 'delivery'; // 'delivery' or 'dinein'
 const SERVICE_FEE = 10; // Service fee for dine-in orders in EGP
 
@@ -196,6 +197,16 @@ function getCategoryItems(menu, category) {
   return category === 'all'? getAllItems(menu) :  menu[category];
 }
 
+// Chicken part detection - checks description field for "ربع فرخه" or "ربع فرخة"
+function containsChicken(description) {
+    return description && (description.includes('ربع فرخه') || description.includes('ربع فرخة'));
+}
+
+function selectChickenPart(itemId, part) {
+    selectedChickenParts[itemId] = part;
+    displayMenu(currentCategory);
+}
+
 // Get category title
 function getCategoryTitle(category) {
     const titles = {
@@ -205,23 +216,23 @@ function getCategoryTitle(category) {
 }
 
 // Helper function to get price display HTML
-function getPriceHTML(item, currentSize = null) {
+function getPriceHTML(item, currentSize = null, priceOffset = 0) {
     const price = currentSize ? currentSize.price : item.price;
     const originalPrice = currentSize ? currentSize.originalPrice : item.originalPrice;
     const newPrice = currentSize ? currentSize.newPrice : item.newPrice;
-    
+
     // If there's a newPrice, show both original (strikethrough) and new price
     if (newPrice !== undefined && newPrice !== null) {
         return `
             <div class="menu-item-price">
                 <span class="original-price">${originalPrice || price} جنيه</span>
-                <span class="new-price">${newPrice} جنيه</span>
+                <span class="new-price">${newPrice + priceOffset} جنيه</span>
             </div>
         `;
     }
-    
+
     // Otherwise, show normal price
-    return `<div class="menu-item-price">${price} جنيه</div>`;
+    return `<div class="menu-item-price">${price + priceOffset} جنيه</div>`;
 }
 
 // Display Menu Items
@@ -250,7 +261,11 @@ function displayMenu(category = 'all') {
         if (item.hasSizes) {
             const selectedSize = selectedSizes[item.id] || item.sizes[0].id;
             const currentSize = item.sizes.find(s => s.id === selectedSize);
-            const itemKey = getItemKey(item.id, selectedSize);
+            const isChicken = containsChicken(item.description);
+            const chickenPart = isChicken ? (selectedChickenParts[item.id] || 'ورك') : null;
+            const priceOffset = chickenPart === 'صدر' ? 10 : 0;
+            const baseKey = getItemKey(item.id, selectedSize);
+            const itemKey = chickenPart ? `${baseKey}_${chickenPart}` : baseKey;
             const cartItem = cart.find(i => i.cartKey === itemKey);
             const isInCart = !!cartItem;
 
@@ -261,33 +276,40 @@ function displayMenu(category = 'all') {
                     <div class="menu-item-body">
                         <div class="menu-item-title">${item.name}</div>
                         <div class="menu-item-desc">${item.description?item.description:''}</div>
-                        
+
                         <div class="size-options">
                             ${item.sizes.map(size => `
-                                <button class="size-btn ${selectedSize === size.id ? 'active' : ''}" 
+                                <button class="size-btn ${selectedSize === size.id ? 'active' : ''}"
                                         onclick="selectSize(${item.id}, '${size.id}')">
                                     ${size.name}
                                 </button>
                             `).join('')}
                         </div>
-                        
-                        ${getPriceHTML(item, currentSize)}
-                        
+
+                        ${isChicken ? `
+                        <div class="size-options">
+                            <button class="size-btn ${chickenPart === 'ورك' ? 'active' : ''}" onclick="selectChickenPart(${item.id}, 'ورك')">ورك</button>
+                            <button class="size-btn ${chickenPart === 'صدر' ? 'active' : ''}" onclick="selectChickenPart(${item.id}, 'صدر')">صدر (+10 جنيه)</button>
+                        </div>
+                        ` : ''}
+
+                        ${getPriceHTML(item, currentSize, priceOffset)}
+
                         ${isInCart ? `
                             <div class="item-quantity-control">
-                                <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id}, '${selectedSize}')">
+                                <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id}, '${selectedSize}', '${chickenPart}')">
                                     <i class="fas fa-minus"></i>
                                 </button>
                                 <div class="item-qty-display">${cartItem.quantity}</div>
-                                <button class="item-qty-btn" onclick="increaseQuantityFromMenu(${item.id}, '${selectedSize}')">
+                                <button class="item-qty-btn" onclick="increaseQuantityFromMenu(${item.id}, '${selectedSize}', '${chickenPart}')">
                                     <i class="fas fa-plus"></i>
                                 </button>
-                                <button class="item-delete-btn" onclick="removeFromCartMenu(${item.id}, '${selectedSize}')">
+                                <button class="item-delete-btn" onclick="removeFromCartMenu(${item.id}, '${selectedSize}', '${chickenPart}')">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </div>
                         ` : `
-                            <button class="add-to-cart-btn" onclick="addToCart(${item.id}, '${selectedSize}')">
+                            <button class="add-to-cart-btn" onclick="addToCart(${item.id}, '${selectedSize}', ${chickenPart ? `'${chickenPart}'` : 'null'})">
                                 <i class="fas fa-cart-plus"></i> أضف للسلة
                             </button>
                         `}
@@ -297,9 +319,14 @@ function displayMenu(category = 'all') {
             `;
         } else {
             // Regular items without sizes
-            const cartItem = cart.find(i => i.cartKey === getItemKey(item.id));
+            const isChicken = containsChicken(item.description);
+            const chickenPart = isChicken ? (selectedChickenParts[item.id] || 'ورك') : null;
+            const priceOffset = chickenPart === 'صدر' ? 10 : 0;
+            const baseKey = getItemKey(item.id, null);
+            const itemKey = chickenPart ? `${baseKey}_${chickenPart}` : baseKey;
+            const cartItem = cart.find(i => i.cartKey === itemKey);
             const isInCart = !!cartItem;
-            
+
             return `
             <div class="col-md-4">
                 <div class="menu-item">
@@ -307,24 +334,31 @@ function displayMenu(category = 'all') {
                     <div class="menu-item-body">
                         <div class="menu-item-title">${item.name}</div>
                         <div class="menu-item-desc">${item.description? item.description : ''}</div>
-                        
-                        ${getPriceHTML(item)}
-                        
+
+                        ${isChicken ? `
+                        <div class="size-options">
+                            <button class="size-btn ${chickenPart === 'ورك' ? 'active' : ''}" onclick="selectChickenPart(${item.id}, 'ورك')">ورك</button>
+                            <button class="size-btn ${chickenPart === 'صدر' ? 'active' : ''}" onclick="selectChickenPart(${item.id}, 'صدر')">صدر (+10 جنيه)</button>
+                        </div>
+                        ` : ''}
+
+                        ${getPriceHTML(item, null, priceOffset)}
+
                         ${isInCart ? `
                             <div class="item-quantity-control">
-                                <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id})">
+                                <button class="item-qty-btn" onclick="decreaseQuantityFromMenu(${item.id}, null, '${chickenPart}')">
                                     <i class="fas fa-minus"></i>
                                 </button>
                                 <div class="item-qty-display">${cartItem.quantity}</div>
-                                <button class="item-qty-btn" onclick="increaseQuantityFromMenu(${item.id})">
+                                <button class="item-qty-btn" onclick="increaseQuantityFromMenu(${item.id}, null, '${chickenPart}')">
                                     <i class="fas fa-plus"></i>
                                 </button>
-                                <button class="item-delete-btn" onclick="removeFromCartMenu(${item.id})">
+                                <button class="item-delete-btn" onclick="removeFromCartMenu(${item.id}, null, '${chickenPart}')">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </div>
                         ` : `
-                            <button class="add-to-cart-btn" onclick="addToCart(${item.id})">
+                            <button class="add-to-cart-btn" onclick="addToCart(${item.id}, null, ${chickenPart ? `'${chickenPart}'` : 'null'})">
                                 <i class="fas fa-cart-plus"></i> أضف للسلة
                             </button>
                         `}
@@ -349,32 +383,39 @@ function filterCategory(category) {
 }
 
 // Add to Cart
-function addToCart(itemId, sizeId = null) {
+function addToCart(itemId, sizeId = null, chickenPart = null) {
     const item = getCategoryItems(menuItems,'all').find(i => i.id === itemId);
-    const itemKey = getItemKey(itemId, sizeId);
+    const baseKey = getItemKey(itemId, sizeId);
+    const itemKey = chickenPart ? `${baseKey}_${chickenPart}` : baseKey;
     const existingItem = cart.find(i => i.cartKey === itemKey);
-    
+
     if (existingItem) {
         existingItem.quantity++;
     } else {
         let cartItem = { ...item, quantity: 1, cartKey: itemKey };
-        
+
         // Add size information if applicable
         if (item.hasSizes && sizeId) {
             const size = item.sizes.find(s => s.id === sizeId);
             cartItem.selectedSize = size;
-            // Use newPrice if available, otherwise use regular price
             cartItem.price = size.newPrice !== undefined && size.newPrice !== null ? size.newPrice : size.price;
             cartItem.displayName = `${item.name} - ${size.name}`;
         } else {
             cartItem.displayName = item.name;
-            // Use newPrice if available, otherwise use regular price
             cartItem.price = item.newPrice !== undefined && item.newPrice !== null ? item.newPrice : item.price;
         }
-        
+
+        // Apply chicken part
+        if (chickenPart) {
+            cartItem.displayName += ` (${chickenPart})`;
+            if (chickenPart === 'صدر') {
+                cartItem.price += 10;
+            }
+        }
+
         cart.push(cartItem);
     }
-    
+
     updateCart();
     displayMenu(currentCategory);
 }
@@ -451,14 +492,16 @@ function removeFromCart(cartKey) {
 }
 
 // Increase from Menu
-function increaseQuantityFromMenu(itemId, sizeId = null) {
-    const cartKey = getItemKey(itemId, sizeId);
+function increaseQuantityFromMenu(itemId, sizeId = null, chickenPart = null) {
+    const baseKey = getItemKey(itemId, sizeId);
+    const cartKey = chickenPart && chickenPart !== 'null' ? `${baseKey}_${chickenPart}` : baseKey;
     increaseQuantity(cartKey);
 }
 
 // Decrease from Menu
-function decreaseQuantityFromMenu(itemId, sizeId = null) {
-    const cartKey = getItemKey(itemId, sizeId);
+function decreaseQuantityFromMenu(itemId, sizeId = null, chickenPart = null) {
+    const baseKey = getItemKey(itemId, sizeId);
+    const cartKey = chickenPart && chickenPart !== 'null' ? `${baseKey}_${chickenPart}` : baseKey;
     const item = cart.find(i => i.cartKey === cartKey);
     if (item && item.quantity > 1) {
         decreaseQuantity(cartKey);
@@ -468,8 +511,9 @@ function decreaseQuantityFromMenu(itemId, sizeId = null) {
 }
 
 // Remove from Menu
-function removeFromCartMenu(itemId, sizeId = null) {
-    const cartKey = getItemKey(itemId, sizeId);
+function removeFromCartMenu(itemId, sizeId = null, chickenPart = null) {
+    const baseKey = getItemKey(itemId, sizeId);
+    const cartKey = chickenPart && chickenPart !== 'null' ? `${baseKey}_${chickenPart}` : baseKey;
     removeFromCart(cartKey);
 }
 
