@@ -69,6 +69,13 @@
       "originalPrice": 600,
       "newPrice": 550,
       "image": "./imgs/sawaany/super.jpg"
+    },
+    {
+      "name": "صنيه العيد",
+      "description": "نص فرخه + نص كفته + ربع طرب + ربع سجق + ربع ممبار + تمن شيش + كيلو رز + عيش + سلطات",
+      "originalPrice": 1000,
+      "newPrice": 800,
+      "image": "./imgs/offers/eid.jpeg"
     }
   ]
 }
