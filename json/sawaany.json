@@ -7,12 +7,6 @@
       "image": "./imgs/sawaany/palestine.jpeg"
     },
     {
-      "name": "صنية الرايق",
-      "description": "فرخة كاملة + نص كفتة + رز + عيش + سلطات",
-      "price": 550,
-      "image": "./imgs/sawaany/elraya2.jpg"
-    },
-    {
       "name": "صنية اسر",
       "description": "نص فرخة + ربع ممبار + ربع سجق + ربع كفتة + 2 حواوشي + رز + عيش + سلطات",
       "price": 510,
@@ -23,12 +17,6 @@
       "description": "نص كفتة + ربع كباب استيك + ربع سجق مشوي + ربع ممبار + رز + عيش + سلطات",
       "price": 530,
       "image": "./imgs/sawaany/elakela.jpg"
-    },
-    {
-      "name": "صنية السوبر",
-      "description": "فرخة كاملة + تلت كفتة + تمن سجق + تمن ممبار + رز + عيش + سلطات",
-      "price": 590,
-      "image": "./imgs/sawaany/super.jpg"
     },
     {
       "name": "صنية الصحاب",

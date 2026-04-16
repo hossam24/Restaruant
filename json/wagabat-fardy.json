@@ -1,18 +1,5 @@
 {
   "wagabatFardy": [
-    
-    {
-      "name": "وجبة كفتة وممبار",
-      "description": "ربع كيلو كفتة + تمن كيلو ممبار",
-      "price": 145,
-      "image": "./imgs/wagabat-fardy/kofta-mombar.jpg"
-    },
-    {
-      "name": "وجبة الفورمة",
-      "description": "ربع كيلو كفتة مشوية + تمن كيلو سجق مشوي",
-      "price": 145,
-      "image": "./imgs/wagabat-fardy/elforma.jpg"
-    },
     {
       "name": "وجبة كفتة وشيش",
       "description": "تمن كفتة + ربع كيلو شيش طاووق",
