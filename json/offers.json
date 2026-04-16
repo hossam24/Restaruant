@@ -1,13 +1,6 @@
 {
   "offers": [
     {
-      "name": "عرض 5 ساندوتشات",
-      "description": "٢ كفته + ١ كبده + ١ حواوشي + ١ سجق",
-      "originalPrice": 200,
-      "newPrice": 149,
-      "image": "./imgs/offers/5sand.jpeg"
-    },
-    {
       "name": "وجبه الأقتصادي",
       "description": "ربع فرخه مشويه + صباع كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 130,
@@ -22,11 +15,46 @@
       "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
     },
     {
+      "name": "عرض 5 ساندوتشات",
+      "description": "2 كفته +1 كبده + 1 حواوشي +1 سجق + ميه سلطه + مخلل + طحينه",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/offers/5sand.jpeg"
+    },
+    {
       "name": "وجبه الف هنا",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + ممبار + رز بسمتي + عيش + سلطات",
       "originalPrice": 200,
       "newPrice": 150,
       "image": "./imgs/offers/alf-hana.jpeg"
+    },
+    {
+      "name": "ميكس جريل حواوشي",
+      "description": "ربع فرخه مشويه + تمن كيلو كفته + رغيف حواوشي + رز بسمتي + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
+    },
+    {
+      "name": "ميكس طرب",
+      "description": "ربع فرخه مشويه + تمن مشكل طرب وكفته + رز + عيش سلطات",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/offers/mix.jpeg"
+    },
+    {
+      "name": "وجبة كفتة وممبار",
+      "description": "ربع كيلو كفتة + تمن كيلو ممبار",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/wagabat-fardy/kofta-mombar.jpg"
+    },
+    {
+      "name": "وجبة الفورمة",
+      "description": "ربع كيلو كفتة مشوية + تمن كيلو سجق مشوي",
+      "originalPrice": 200,
+      "newPrice": 150,
+      "image": "./imgs/wagabat-fardy/elforma.jpg"
     },
     {
       "name": "وجبه البطوله",
