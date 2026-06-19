@@ -2,8 +2,8 @@
   "wagabatFardy": [
     {
       "name": "وجبة كفتة وشيش",
-      "description": "تمن كفتة + ربع كيلو شيش طاووق",
-      "price": 155,
+      "description": "ربع شيش + تمن كفته + رز بسمتى + عيش + سلطات",
+      "price": 130,
       "image": "./imgs/wagabat-fardy/kofta-shesh.jpg"
     },
     {
@@ -21,7 +21,7 @@
     {
       "name": "ميكس السعادة",
       "description": "ربع فرخة + تمن كفتة + تمن سجق + تمن ممبار",
-      "price": 225,
+      "price": 200,
       "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
     }
   ]

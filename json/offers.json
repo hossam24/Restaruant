@@ -1,10 +1,11 @@
 {
   "offers": [
+    
     {
       "name": "وجبه الأقتصادي",
       "description": "ربع فرخه مشويه + صباع كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 130,
-      "newPrice": 107,
+      "newPrice": 99,
       "image": "./imgs/offers/wagba-eqtsadya.jpg"
     },
     {
@@ -15,11 +16,11 @@
       "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
     },
     {
-      "name": "عرض 5 ساندوتشات",
+      "name": "عرض  ساندوتشات",
       "description": "2 كفته +1 كبده + 1 حواوشي +1 سجق + ميه سلطه + مخلل + طحينه",
       "originalPrice": 200,
       "newPrice": 150,
-      "image": "./imgs/offers/5sand.jpeg"
+      "image": "./imgs/offers/عرض الساندوتشات .jpeg"
     },
     {
       "name": "وجبه الف هنا",
@@ -39,7 +40,7 @@
       "name": "ميكس طرب",
       "description": "ربع فرخه مشويه + تمن مشكل طرب وكفته + رز + عيش سلطات",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/offers/mix.jpeg"
     },
     {
@@ -67,14 +68,14 @@
       "name": "صنيه الجديد شديد",
       "description": "نص فرخه مشويه + ربع كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 310,
-      "newPrice": 275,
+      "newPrice": 280,
       "image": "./imgs/offers/elgded-shdeed.jpeg"
     },
     {
       "name": "صنيه الحج رشيدي",
       "description": "نص فرخه مشويه + ربع كيلو كفته + تمن سجق + تمن ممبار بيتي + رز بسمتي + عيش + سلطات",
       "originalPrice": 410,
-      "newPrice": 375,
+      "newPrice": 390,
       "image": "./imgs/wagabat-zawgy/7ag-rasheedy.jpeg"
     },
     {
@@ -88,14 +89,14 @@
       "name": "صنيه الرايق",
       "description": "فرخه كامله مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 600,
-      "newPrice": 520,
+      "newPrice": 500,
       "image": "./imgs/sawaany/elraya2.jpg"
     },
     {
       "name": "صنيه السوبر",
       "description": "فرخه كامله مشويه + تلت كيلو كفته + تمن كيلو سجق + تمن ممبار + رز بسمتي + عيش + سلطات",
-      "originalPrice": 600,
-      "newPrice": 550,
+      "originalPrice": 620,
+      "newPrice": 590,
       "image": "./imgs/sawaany/super.jpg"
     },
     {
@@ -104,6 +105,76 @@
       "originalPrice": 1000,
       "newPrice": 800,
       "image": "./imgs/offers/eid.jpeg"
+    },
+    {
+      "name": "بوكس البطولة",
+      "description": "1 كفته + 1 شيش + 1 حواوشي + بطاطس + بيج كولا",
+      "originalPrice": 160,
+      "newPrice": 130,
+      "image": "./imgs/offers/بوكس البطولة .jpeg"
+    },
+    {
+      "name": "وجبه شيش وكفته",
+      "description": "ربع شيش + تمن كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 160,
+      "newPrice": 130,
+      "image": "./imgs/wagabat-fardy/kofta-shesh.jpg"
+    },
+    {
+      "name": "وجبه المزاج",
+      "description": "ربع فرخه + تمن كفته + رز + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 130,
+      "image": "./imgs/offers/المزاج.jpeg"
+    },
+    {
+      "name": "وجبه الحدوته",
+      "description": "ربع فرخه + صابع كفته + صابع ممبار + صابع سجق + رز + عيش + سلطات",
+      "originalPrice": 150,
+      "newPrice": 150,
+      "image": "./imgs/offers/el7adota.jpg"
+    },
+    {
+      "name": "وجبه الغاوى",
+      "description": "ربع فراخ + صابع كفته + صابع طرب ضاني + صابع سجق + صابع ممبار + رز + عيش + سلطات",
+      "originalPrice": 250,
+      "newPrice": 190,
+      "image": "./imgs/offers/elgawy.jpg"
+    },
+    {
+      "name": "وجبه الجدع",
+      "description": "نص فرخه مشويه + تمن كيلو كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 280,
+      "newPrice": 200,
+      "image": "./imgs/offers/elgada3.jpg"
+    },
+    {
+      "name": "ميكس السعاده",
+      "description": "ربع فرخه مشويه + تمن كيلو كفته + تمن كيلو سجق + تمن كيلو ممبار بيتي + رز بسمتي + عيش + سلطات",
+      "originalPrice": 260,
+      "newPrice": 200,
+      "image": "./imgs/wagabat-fardy/mix-sa3adaa.jpeg"
+    },
+    {
+      "name": "وجبه الجيار",
+      "description": "ربع كيلو كفته مشوي + تمن سجق مشوي + تمن ممبار + بطاطس + رز + عيش + سلطات",
+      "originalPrice": 200,
+      "newPrice": 200,
+      "image": "./imgs/offers/gayar.jpeg"
+    },
+    {
+      "name": "عرض سوبر توفير",
+      "description": "نص فرخه مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
+      "originalPrice": 450,
+      "newPrice": 370,
+      "image": "./imgs/offers/super-tawfeer.jpeg"
+    },
+    {
+      "name": "صنيه الطيبات",
+      "description": "فرخه كامله + نص كفته + ربع ممبار + ربع طرب + ربع سجق + رز + عيش + سلطات",
+      "originalPrice": 1200,
+      "newPrice": 900,
+      "image": "./imgs/offers/eltyebat.jpg"
     }
   ]
 }
