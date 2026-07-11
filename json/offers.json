@@ -74,9 +74,9 @@
     {
       "name": "صنيه الحج رشيدي",
       "description": "نص فرخه مشويه + ربع كيلو كفته + تمن سجق + تمن ممبار بيتي + رز بسمتي + عيش + سلطات",
-      "originalPrice": 410,
-      "newPrice": 390,
-      "image": "./imgs/wagabat-zawgy/7ag-rasheedy.jpeg"
+      "originalPrice": 450,
+      "newPrice": 360,
+      "image": "./imgs/offers/رشيدي.jpeg"
     },
     {
       "name": "صنيه العيد الصغير",
@@ -88,9 +88,9 @@
     {
       "name": "صنيه الرايق",
       "description": "فرخه كامله مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
-      "originalPrice": 600,
+      "originalPrice": 600, 
       "newPrice": 500,
-      "image": "./imgs/sawaany/elraya2.jpg"
+      "image": "./imgs/offers/الرايق.jpeg"
     },
     {
       "name": "صنيه السوبر",
@@ -105,6 +105,13 @@
       "originalPrice": 1000,
       "newPrice": 800,
       "image": "./imgs/offers/eid.jpeg"
+    },
+    {
+      "name": "صنيه العميد",
+      "description": "نص فرخه + نص كفته + ربع طرب + ربع سجق + ربع ممبار + تمن شيش + كيلو رز + عيش + سلطات",
+      "originalPrice": 1050,
+      "newPrice": 850,
+      "image": "./imgs/offers/العميد.jpeg"
     },
     {
       "name": "بوكس البطولة",
