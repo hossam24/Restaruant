@@ -65,12 +65,31 @@
       "image": "./imgs/offers/elbtola.jpg"
     },
     {
-      "name": "صنيه الجديد شديد",
+      "name": "وجبة الجديد شديد",
       "description": "نص فرخه مشويه + ربع كيلو كفته + رز بسمتي + عيش + سلطات",
-      "originalPrice": 310,
-      "newPrice": 280,
-      "image": "./imgs/offers/elgded-shdeed.jpeg"
+      "originalPrice": 350,
+      "newPrice": 250,
+      "image": "./imgs/offers/الجديد شدديد.jpeg"
     },
+ {
+      "name": "وجبة التوربيني ",
+      "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو سجق + رز بسمتي + عيش + سلطات",
+      "originalPrice": 350,
+      "newPrice": 250,
+      "image": "./imgs/offers/التوربيني.jpeg"
+    },
+
+     {
+      "name": "وجبة الجامدين ",
+      "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو ممبار + رز بسمتي + عيش + سلطات",
+      "originalPrice": 350,
+      "newPrice": 250,
+      "image": "./imgs/offers/الجامدين.jpeg"
+    },
+
+
+
+
     {
       "name": "صنيه الحج رشيدي",
       "description": "نص فرخه مشويه + ربع كيلو كفته + تمن سجق + تمن ممبار بيتي + رز بسمتي + عيش + سلطات",
