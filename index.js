@@ -542,7 +542,7 @@ function sendToWhatsApp() {
         return;
     }
     
-    const phoneNumber = '201501108083';
+    const phoneNumber = '201227661357';
     let message = '🍽️ *طلب جديد من مطعم راشيدي*\n\n';
     
     // Validate based on order type
