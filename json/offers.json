@@ -11,7 +11,7 @@
     {
       "name": "مكس مشوي",
       "description": "ربع فرخة + تمن كفتة",
-      "originalPrice": 150,
+      "originalPrice": 160,
       "newPrice": 130,
       "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
     },
@@ -19,21 +19,21 @@
       "name": "عرض  ساندوتشات",
       "description": "2 كفته +1 كبده + 1 حواوشي +1 سجق + ميه سلطه + مخلل + طحينه",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/offers/عرض الساندوتشات .jpeg"
     },
     {
       "name": "وجبه الف هنا",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + ممبار + رز بسمتي + عيش + سلطات",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/offers/alf-hana.jpeg"
     },
     {
       "name": "ميكس جريل حواوشي",
       "description": "ربع فرخه مشويه + تمن كيلو كفته + رغيف حواوشي + رز بسمتي + عيش + سلطات",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/offers/mix-grill-hawawshi.jpeg"
     },
     {
@@ -47,14 +47,14 @@
       "name": "وجبة كفتة وممبار",
       "description": "ربع كيلو كفتة + تمن كيلو ممبار",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/wagabat-fardy/kofta-mombar.jpg"
     },
     {
       "name": "وجبة الفورمة",
       "description": "ربع كيلو كفتة مشوية + تمن كيلو سجق مشوي",
       "originalPrice": 200,
-      "newPrice": 150,
+      "newPrice": 160,
       "image": "./imgs/wagabat-fardy/elforma.jpg"
     },
     {
@@ -68,14 +68,14 @@
       "name": "وجبة الجديد شديد",
       "description": "نص فرخه مشويه + ربع كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 350,
-      "newPrice": 250,
+      "newPrice": 260,
       "image": "./imgs/offers/الجديد شدديد.jpeg"
     },
  {
       "name": "وجبة التوربيني ",
       "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو سجق + رز بسمتي + عيش + سلطات",
       "originalPrice": 350,
-      "newPrice": 250,
+      "newPrice": 260,
       "image": "./imgs/offers/التوربيني.jpeg"
     },
 
@@ -83,7 +83,7 @@
       "name": "وجبة الجامدين ",
       "description": "نص فرخه مشويه + تمن كيلو كفته + تمن كيلو ممبار + رز بسمتي + عيش + سلطات",
       "originalPrice": 350,
-      "newPrice": 250,
+      "newPrice": 260,
       "image": "./imgs/offers/الجامدين.jpeg"
     },
 
@@ -104,6 +104,14 @@
       "image": "./imgs/offers/صنية الصيف.jpeg"
     },
 
+
+  {
+      "name": "صنية طرابزون",
+      "description": "تلت اربع فراخ + 3كفتة + 3 ممبار + 2طرب + رز +عيش + سلطات تكفي 3 افراد كل فرد 150",
+      "originalPrice": 600,
+      "newPrice": 450,
+      "image": "./imgs/offers/صنية الصيف.jpeg"
+    },
 
 
     {
@@ -165,8 +173,8 @@
     {
       "name": "وجبه الحدوته",
       "description": "ربع فرخه + صابع كفته + صابع ممبار + صابع سجق + رز + عيش + سلطات",
-      "originalPrice": 150,
-      "newPrice": 150,
+      "originalPrice": 160,
+      "newPrice": 160,
       "image": "./imgs/offers/الحدوتة.jpeg"
     },
     {
