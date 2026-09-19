@@ -15,11 +15,27 @@
       "newPrice": 130,
       "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
     },
+
+  {
+      "name": "بوكس كليه تجاره  ",
+      "description": "واحد كفتة + واحد سجق +واحد حواوشي +بطاطس +مية سلطة + مخلل",
+      "originalPrice":130,
+      "newPrice": 100,
+      "image": "./imgs/wagabat-fardy/mix-mashwy.jpeg"
+    },
+
+   {
+      "name": "وجبة ربع مشكل",
+      "description": "تمن طرب  + تمن كفتة + رز عيش سلطات ",
+      "originalPrice": 180,
+      "newPrice": 150,
+      "image": "./imgs/offers/ربع مشكل.jpeg"
+    },
     {
       "name": "عرض  ساندوتشات",
       "description": "2 كفته +1 كبده + 1 حواوشي +1 سجق + ميه سلطه + مخلل + طحينه",
       "originalPrice": 200,
-      "newPrice": 160,
+      "newPrice": 150,
       "image": "./imgs/offers/عرض الساندوتشات .jpeg"
     },
     {
@@ -107,9 +123,9 @@
 
   {
       "name": "صنية طرابزون",
-      "description": "تلت اربع فراخ + 3كفتة + 3 ممبار + 2طرب + رز +عيش + سلطات تكفي 3 افراد كل فرد 150",
+      "description": "تلت اربع فراخ + 3كفتة + 3 ممبار + 2طرب + رز +عيش + سلطات تكفي 3 افراد   ",
       "originalPrice": 600,
-      "newPrice": 450,
+      "newPrice": 470,
       "image": "./imgs/offers/صنية الصيف.jpeg"
     },
 
@@ -125,7 +141,7 @@
       "name": "صنيه الرايق",
       "description": "فرخه كامله مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 600, 
-      "newPrice": 500,
+      "newPrice": 510,
       "image": "./imgs/offers/الرايق.jpeg"
     },
     {
@@ -209,7 +225,7 @@
       "name": "عرض سوبر توفير",
       "description": "نص فرخه مشويه + نص كيلو كفته + رز بسمتي + عيش + سلطات",
       "originalPrice": 450,
-      "newPrice": 370,
+      "newPrice": 350,
       "image": "./imgs/offers/super-tawfeer.jpeg"
     },
     {
@@ -218,6 +234,23 @@
       "originalPrice": 1200,
       "newPrice": 900,
       "image": "./imgs/offers/eltyebat.jpg"
-    }
+    },
+
+    {
+    "name": "صنيه الكبابجي",
+    "description": "نص كيلو كفته مشويه + ربع كيلو كباب فلتو + ربع طرب ضاني + ربع كيلو سجق + ربع كيلو شيش + ربع كيلو ممبار + عيش وسلطات وطحينه",
+    "originalPrice": 1200,
+    "newPrice": 800,
+    "image": "./imgs/offers/الكبابجي.jpeg"
+  },
+  {
+    "name": "صنية الصحاب",
+    "description": "فرخه كامله + نص كفته + تمن سجق + ٤ انصاص حواوشي + رز + عيش + سلطات (تكفى ٤ أفراد)",
+    "originalPrice": 800,
+    "newPrice": 600,
+    "image": "./imgs/offers/elsohab.jpg"
+  }
+
+
   ]
 }
