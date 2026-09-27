@@ -24,6 +24,15 @@
       "image": "./imgs/sandwich/kofta.jpg"
     },
 
+    {
+      "name": "بوكس كليه تربية  ",
+      "description": "اتنين كفتة +اتنين حواوشي +بطاطس +مية سلطة + مخلل",
+      "originalPrice":180,
+      "newPrice": 120,
+      "image": "./imgs/offers/تربية.jpeg"
+    },
+
+
    {
       "name": "وجبة ربع مشكل",
       "description": "تمن طرب  + تمن كفتة + رز عيش سلطات ",
