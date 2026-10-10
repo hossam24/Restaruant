@@ -210,7 +210,7 @@ function selectChickenPart(itemId, part) {
 // Get category title
 function getCategoryTitle(category) {
     const titles = {
-        'mashawy': 'جميع المشويات تقدم مع رز و عيش و سلطات'
+        'mashawy': 'جميع المشويات تقدم مع عيش و سلطات'
     };
     return titles[category] || null;
 }
