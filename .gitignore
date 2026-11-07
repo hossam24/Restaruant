@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+.DS_Store
+.dev.vars
+.wrangler/state
+.wrangler/tmp
+.wrangler/cache/cf.json
+*.tsbuildinfo
+
+# local secrets (never commit)
+dev.vars.MY-LOCAL-COPY
