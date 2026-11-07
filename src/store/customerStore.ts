@@ -11,7 +11,6 @@ interface CustomerState extends Saved {
 
 const BLANK: Saved = { name: '', phone: '', additionalPhone: '', address: '' }
 
-/** Stays on the customer's own device (localStorage). Never sent anywhere except inside the order itself. */
 export const useCustomer = create<CustomerState>()(
   persist(
     (set) => ({
@@ -19,6 +18,6 @@ export const useCustomer = create<CustomerState>()(
       remember: (f) => set({ name: f.name, phone: f.phone, additionalPhone: f.additionalPhone, address: f.address }),
       forget: () => set(BLANK),
     }),
-    { name: 'rasheedy-customer', version: 1 },
+    { name: 'menu-customer', version: 1 },
   ),
 )

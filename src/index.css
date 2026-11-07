@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-/* Dark mode is driven by the data-theme attribute (set by the toggle) or, when the visitor has
-   not chosen, by the device setting. The inline script in index.html applies a saved choice before first paint. */
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
@@ -16,7 +14,6 @@
   --color-wa: #25d366;
   --color-wa-dark: #1ba851;
 
-  /* Semantic colours: these change between light and dark. */
   --color-paper: #faf7f3;
   --color-surface: #ffffff;
   --color-soft: #fafaf9;
@@ -89,7 +86,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Form controls follow the theme instead of keeping browser defaults. */
 input,
 textarea,
 select {

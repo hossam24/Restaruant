@@ -4,6 +4,7 @@ import { BREAST_SURCHARGE } from '../config'
 import type { ChickenPart, MenuItem } from '../data/types'
 import { lineKey, unitPrice } from '../lib/pricing'
 import { useCart } from '../store/cartStore'
+import { FoodImage } from './FoodImage'
 
 function Choice({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
@@ -42,7 +43,7 @@ export function MenuCard({ item, onOpen }: { item: MenuItem; onOpen: (item: Menu
   return (
     <article className="pop-in flex h-full flex-col overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-line transition hover:-translate-y-1 hover:shadow-lg">
       <button type="button" onClick={() => onOpen(item)} aria-label={`تفاصيل ${item.name}`} className="block cursor-zoom-in">
-        <img
+        <FoodImage
           src={item.image}
           alt={item.name}
           loading="lazy"

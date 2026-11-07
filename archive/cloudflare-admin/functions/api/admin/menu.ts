@@ -5,14 +5,12 @@ import { json, KEYS, readShop, type Env } from '../../_shared/http'
 
 const MAX_BODY = 200_000
 
-/** Everything the owner has saved, uncached, for the admin page. */
 export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   const denied = await requireAdmin(request, env)
   if (denied) return denied
   return json({ ...(await readShop(env)), sheetUrl: googleSheetUrl(env.SHEET_URL) })
 }
 
-/** Only a real Google Sheets address is passed on, so a typo in the setting can never become a strange link. */
 function googleSheetUrl(value: string | undefined): string | null {
   try {
     const u = new URL(value ?? '')
@@ -22,7 +20,6 @@ function googleSheetUrl(value: string | undefined): string | null {
   }
 }
 
-/** Replaces all changes to built-in items. The body is cleaned first: nothing from the browser is trusted. */
 export const onRequestPut: PagesFunction<Env> = async ({ request, env }) => {
   const denied = await requireAdmin(request, env)
   if (denied) return denied

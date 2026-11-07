@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-/** Browsing works offline, sending an order does not, so say so before the customer fills the form. */
 export function OfflineNotice() {
   const [online, setOnline] = useState(() => navigator.onLine)
   useEffect(() => {

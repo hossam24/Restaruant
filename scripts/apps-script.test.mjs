@@ -1,10 +1,10 @@
-// Runs the REAL google-apps-script.js against an in-memory fake Google Sheet.
 import { beforeEach, describe, expect, it } from 'vitest'
 import { createRuntime } from './fake-sheets.mjs'
 
 const MENU = 'المنيو'
 const SETTINGS = 'الإعدادات'
-const customer = { name: 'سارة أحمد', phone: '01012345678', additionalPhone: '', address: 'شارع الحلو، طنطا', notes: '' }
+const CATEGORIES = 'الأقسام'
+const customer = { name: 'سارة أحمد', phone: '01012345678', additionalPhone: '', address: 'شارع التحرير، القاهرة', notes: '' }
 
 let rt
 beforeEach(() => {
@@ -12,27 +12,63 @@ beforeEach(() => {
   rt.setup()
 })
 
-/** Row number (in the sheet) of the menu item with this id. */
 const rowOf = (id) => rt.menuSheet().getRange(1, 1, rt.menuSheet().getLastRow(), 1).getValues().findIndex((r) => r[0] === id) + 1
 const COL = { id: 1, category: 2, name: 3, description: 4, price: 5, oldPrice: 6, size1: 7, size1Price: 8, chicken: 13, available: 14, visible: 15, image: 16 }
 
 describe('setup', () => {
-  it('creates both tabs, fills the menu and the settings', () => {
+  it('creates the three tabs, fills the menu, the sections and the settings', () => {
     expect(rt.sheets.has(MENU)).toBe(true)
     expect(rt.sheets.has(SETTINGS)).toBe(true)
-    expect(rt.menuSheet().getLastRow()).toBe(81) // header + 80 items
+    expect(rt.sheets.has(CATEGORIES)).toBe(true)
+    expect(rt.menuSheet().getLastRow()).toBe(18)
+    expect(rt.sheets.get(CATEGORIES).getLastRow()).toBe(6)
     expect(rt.sheets.get(SETTINGS).getRange(2, 1).getValue()).toBe('يفتح الساعة')
   })
   it('adds dropdown lists for the category and the yes/no columns', () => {
     const lists = rt.menuSheet().validations
-    expect(lists.some((v) => v.col === 2 && v.list.includes('العروض'))).toBe(true)
+    expect(lists.some((v) => v.col === 2 && v.list.includes('العروض') && v.fromTab === CATEGORIES)).toBe(true)
     expect(lists.some((v) => v.col === 13 && v.cols === 3 && v.list.join() === 'نعم,لا')).toBe(true)
   })
   it('is safe to run again: it does not duplicate or overwrite the menu', () => {
     rt.edit(MENU, rowOf('sandwich-1'), COL.price, 99)
     rt.setup()
-    expect(rt.menuSheet().getLastRow()).toBe(81)
+    expect(rt.menuSheet().getLastRow()).toBe(18)
     expect(rt.menuSheet().getRange(rowOf('sandwich-1'), COL.price).getValue()).toBe(99)
+  })
+})
+
+describe('the sections (الأقسام tab)', () => {
+  const catRows = () => rt.menu().categories
+  it('are sent to the website in the order of the tab, with their notes', () => {
+    expect(catRows().map((c) => c.label)).toEqual(['العروض', 'الأطباق الرئيسية', 'السندوتشات', 'المقبلات والسلطات', 'المشروبات'])
+    expect(catRows()[1]).toEqual({ id: 'الأطباق الرئيسية', label: 'الأطباق الرئيسية', note: 'كل الأطباق الرئيسية بتتقدم مع عيش وسلطات' })
+  })
+  it('accept a brand-new section: items can use it straight away', () => {
+    rt.edit(CATEGORIES, 7, 1, 'الحلويات')
+    const next = rt.menuSheet().getLastRow() + 1
+    rt.paste(MENU, next, 2, [['الحلويات', 'كنافة', '', 60]])
+    expect(catRows().at(-1).label).toBe('الحلويات')
+    expect(rt.menu().items.find((i) => i.name === 'كنافة')).toMatchObject({ category: 'الحلويات', price: 60 })
+  })
+  it('can be reordered and renamed by editing the tab', () => {
+    rt.edit(CATEGORIES, 2, 1, 'المشروبات')
+    rt.edit(CATEGORIES, 6, 1, 'العروض')
+    expect(catRows().map((c) => c.label)).toEqual(['المشروبات', 'الأطباق الرئيسية', 'السندوتشات', 'المقبلات والسلطات', 'العروض'])
+  })
+  it('ignore blank and repeated names', () => {
+    rt.edit(CATEGORIES, 3, 1, 'العروض')
+    rt.edit(CATEGORIES, 4, 1, '')
+    expect(catRows().map((c) => c.label)).toEqual(['العروض', 'المقبلات والسلطات', 'المشروبات'])
+  })
+  it('tell the owner when an item uses a section that is not in the tab', () => {
+    rt.edit(CATEGORIES, 2, 1, 'غير موجود')
+    expect(rt.ctx.checkMenu()).toContain('القسم مش موجود في ورقة الأقسام')
+    expect(rt.menu().items.some((i) => i.category === 'العروض')).toBe(false)
+  })
+  it('an empty tab gives an empty menu and a clear message instead of an error', () => {
+    rt.sheets.get(CATEGORIES).cells.clear()
+    expect(rt.menu().items).toEqual([])
+    expect(rt.ctx.checkMenu()).toContain('ورقة الأقسام فاضية')
   })
 })
 
@@ -40,27 +76,27 @@ describe('the menu the website receives', () => {
   it('has every item with the right shape', () => {
     const { ok, items } = rt.menu()
     expect(ok).toBe(true)
-    expect(items).toHaveLength(80)
-    expect(new Set(items.map((i) => i.id)).size).toBe(80)
-    expect(items.filter((i) => i.sizes)).toHaveLength(6)
-    expect(items.filter((i) => i.chickenChoice)).toHaveLength(12)
-    const kofta = items.find((i) => i.id === 'mashawy-2')
+    expect(items).toHaveLength(17)
+    expect(new Set(items.map((i) => i.id)).size).toBe(17)
+    expect(items.filter((i) => i.sizes)).toHaveLength(2)
+    expect(items.filter((i) => i.chickenChoice)).toHaveLength(2)
+    const kofta = items.find((i) => i.id === 'main-2')
     expect(kofta.sizes).toEqual([
-      { id: 's1', name: 'كيلو', price: 450 },
+      { id: 's1', name: 'ربع كيلو', price: 115 },
       { id: 's2', name: 'نص كيلو', price: 225 },
-      { id: 's3', name: 'ربع كيلو', price: 113 },
+      { id: 's3', name: 'كيلو', price: 450 },
     ])
     expect(kofta.price).toBeUndefined()
   })
   it('keeps offers as price + oldPrice', () => {
     const offer = rt.menu().items.find((i) => i.id === 'offers-1')
-    expect(offer).toMatchObject({ price: 99, oldPrice: 130, category: 'offers', chickenChoice: true })
+    expect(offer).toMatchObject({ price: 99, oldPrice: 130, category: 'العروض', chickenChoice: true })
   })
   it('reads the opening hours and delivery settings (text cells, not times)', () => {
     expect(rt.menu().settings).toEqual({ hours: { open: '10:00', close: '02:00' }, delivery: { fee: null, freeOver: null, estimate: null } })
   })
   it('also understands hours that Google turned into real times', () => {
-    rt.sheets.get(SETTINGS).formats.clear() // as if the cell was not formatted as text
+    rt.sheets.get(SETTINGS).formats.clear()
     rt.edit(SETTINGS, 2, 2, '9:30')
     expect(rt.menu().settings.hours).toEqual({ open: '09:30', close: '02:00' })
   })
@@ -119,9 +155,9 @@ describe('what the owner can do in the sheet', () => {
     const next = rt.menuSheet().getLastRow() + 1
     rt.paste(MENU, next, 2, [['العروض', 'وجبة جديدة', 'وصف', 120, 150]])
     const added = rt.menu().items.find((i) => i.name === 'وجبة جديدة')
-    expect(added).toMatchObject({ category: 'offers', price: 120, oldPrice: 150, description: 'وصف' })
+    expect(added).toMatchObject({ category: 'العروض', price: 120, oldPrice: 150, description: 'وصف' })
     expect(added.id).toMatch(/^x-[a-f0-9]{8}$/)
-    expect(rt.menuSheet().getRange(next, 1).getValue()).toBe(added.id) // written back into the sheet
+    expect(rt.menuSheet().getRange(next, 1).getValue()).toBe(added.id)
   })
   it('gives separate codes to several rows pasted at once', () => {
     const next = rt.menuSheet().getLastRow() + 1
@@ -150,9 +186,9 @@ describe('what the owner can do in the sheet', () => {
     }
   })
   it('shows the new price within a minute even without an edit trigger', () => {
-    rt.menu() // warms the cache
-    rt.menuSheet().getRange(rowOf('sandwich-1'), COL.price).setValue(55) // changed without onEdit (e.g. by an import)
-    expect(rt.menu().items.find((i) => i.id === 'sandwich-1').price).not.toBe(55) // still cached
+    rt.menu()
+    rt.menuSheet().getRange(rowOf('sandwich-1'), COL.price).setValue(55)
+    expect(rt.menu().items.find((i) => i.id === 'sandwich-1').price).not.toBe(55)
     rt.clock.offset += 61_000
     expect(rt.menu().items.find((i) => i.id === 'sandwich-1').price).toBe(55)
   })
@@ -165,25 +201,25 @@ describe('mistakes in the sheet never break the menu', () => {
   }
   it('skips a row with a bad price and explains it', () => {
     rt.edit(MENU, rowOf('sandwich-1'), COL.price, 'abc')
-    expect(rt.menu().items).toHaveLength(79)
+    expect(rt.menu().items).toHaveLength(16)
     expect(problemsFor()).toContain('سطر ' + rowOf('sandwich-1'))
   })
   it('skips a row with a category that is not in the list', () => {
     rt.edit(MENU, rowOf('sandwich-1'), COL.category, 'قسم غلط')
-    expect(rt.menu().items).toHaveLength(79)
+    expect(rt.menu().items).toHaveLength(16)
   })
   it('skips an incomplete size and a duplicate code', () => {
-    rt.edit(MENU, rowOf('sandwich-1'), COL.size1, 'كبير') // name without a price
-    rt.edit(MENU, rowOf('sandwich-2'), COL.id, 'sandwich-3') // same code as another row
-    expect(rt.menu().items).toHaveLength(78)
+    rt.edit(MENU, rowOf('sandwich-1'), COL.size1, 'كبير')
+    rt.edit(MENU, rowOf('sandwich-2'), COL.id, 'sandwich-3')
+    expect(rt.menu().items).toHaveLength(15)
   })
   it('reports a healthy menu as healthy', () => {
-    expect(problemsFor()).toContain('80')
+    expect(problemsFor()).toContain('17')
   })
   it('ignores empty rows and rows with a price of zero or a decimal', () => {
     rt.edit(MENU, rowOf('sandwich-1'), COL.price, 0)
     rt.edit(MENU, rowOf('sandwich-2'), COL.price, 12.5)
-    expect(rt.menu().items).toHaveLength(78)
+    expect(rt.menu().items).toHaveLength(15)
   })
   it('does not crash when the menu tab is empty', () => {
     rt.menuSheet().cells.clear()
@@ -201,8 +237,8 @@ describe('orders', () => {
     const res = rt.order({
       customer,
       lines: [
-        sandwich({ note: 'بدون بصل', price: 1, total: 1 }), // the browser lies about the price
-        { itemId: 'mashawy-2', sizeId: 's2', quantity: 1 },
+        sandwich({ note: 'بدون بصل', price: 1, total: 1 }),
+        { itemId: 'main-2', sizeId: 's2', quantity: 1 },
         { itemId: 'offers-2', part: 'صدر', quantity: 1 },
       ],
       total: 5,
@@ -211,7 +247,7 @@ describe('orders', () => {
     const row = last()
     expect(row[1]).toBe('سارة أحمد')
     expect(row[2]).toBe('01012345678')
-    expect(row[5]).toBe('كفتة مشوي (2x) - 70 جنيه [بدون بصل] | كفتة مشوية - نص كيلو (1x) - 225 جنيه | مكس مشوي (صدر) (1x) - 140 جنيه')
+    expect(row[5]).toBe('كفتة مشوي (2x) - 70 جنيه [بدون بصل] | كفتة مشوية - نص كيلو (1x) - 225 جنيه | وجبة الصحاب (صدر) (1x) - 140 جنيه')
     expect(row[6]).toBe('435 جنيه')
     expect(row[8]).toBe('توصيل')
   })
@@ -228,9 +264,9 @@ describe('orders', () => {
   it('adds the delivery fee, and waives it over the free-delivery amount', () => {
     rt.edit(SETTINGS, 4, 2, 20)
     rt.edit(SETTINGS, 5, 2, 100)
-    rt.order({ customer, lines: [sandwich({ quantity: 1 })] }) // 35 + 20
+    rt.order({ customer, lines: [sandwich({ quantity: 1 })] })
     expect(last()[6]).toBe('55 جنيه')
-    rt.order({ customer: { ...customer, phone: '01112345678' }, lines: [sandwich({ quantity: 3 })] }) // 105, free
+    rt.order({ customer: { ...customer, phone: '01112345678' }, lines: [sandwich({ quantity: 3 })] })
     expect(last()[6]).toBe('105 جنيه')
   })
   it('stores Arabic-digit phone numbers as normal digits', () => {
@@ -242,8 +278,8 @@ describe('orders', () => {
     expect(last()[6]).toBe('35 جنيه')
   })
   it('falls back to the first size when the size is unknown', () => {
-    rt.order({ customer, lines: [{ itemId: 'mashawy-2', sizeId: 'nope', quantity: 1 }] })
-    expect(last()[6]).toBe('450 جنيه')
+    rt.order({ customer, lines: [{ itemId: 'main-2', sizeId: 'nope', quantity: 1 }] })
+    expect(last()[6]).toBe('115 جنيه')
   })
   it('flags an order for an item that sold out meanwhile, but still records it', () => {
     rt.edit(MENU, rowOf('sandwich-1'), COL.available, 'لا')
@@ -280,7 +316,6 @@ describe('orders', () => {
     expect(codes).toEqual(['success', 'success', 'success', 'error', 'error'])
     rt.clock.offset += 601_000
     expect(rt.order({ customer, lines: [sandwich()] }).status).toBe('success')
-    // a different phone is not affected
     expect(rt.order({ customer: { ...customer, phone: '01512345678' }, lines: [sandwich()] }).status).toBe('success')
   })
   it('stops a flood from many phones (120 orders per 10 minutes overall)', () => {

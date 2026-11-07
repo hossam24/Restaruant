@@ -4,7 +4,6 @@ import { clientIp, json, rateLimited, type Env } from '../../_shared/http'
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (!env.ADMIN_PASSWORD) return json({ error: 'لوحة التحكم لسه متفعلتش على السيرفر.' }, 503)
 
-  // 10 attempts per 15 minutes per visitor: enough for typos, too slow for guessing.
   if (await rateLimited(env, `login:${clientIp(request)}`, 10, 900)) {
     return json({ error: 'محاولات كتير. استنى شوية وجرّب تاني.' }, 429)
   }

@@ -27,7 +27,7 @@ function Login({ onDone }: { onDone: () => void }) {
 
   return (
     <form onSubmit={submit} className="mx-auto mt-24 flex w-full max-w-sm flex-col gap-4 rounded-3xl bg-surface p-7 shadow-xl ring-1 ring-line">
-      <h1 className="text-center text-2xl font-extrabold">لوحة تحكم رشيدي</h1>
+      <h1 className="text-center text-2xl font-extrabold">لوحة التحكم</h1>
       <label className="flex flex-col gap-1.5 font-bold">
         كلمة السر
         <input
@@ -83,9 +83,8 @@ export default function Admin() {
     setShop(null)
   }, [])
 
-  // The admin page is not for search engines.
   useEffect(() => {
-    document.title = 'لوحة تحكم رشيدي'
+    document.title = 'لوحة التحكم'
     const meta = document.createElement('meta')
     meta.name = 'robots'
     meta.content = 'noindex,nofollow'
@@ -110,7 +109,7 @@ export default function Admin() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-6">
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-extrabold">لوحة تحكم رشيدي</h1>
+        <h1 className="text-2xl font-extrabold">لوحة التحكم</h1>
         <div className="flex gap-4 text-sm">
           <a href="/" className="text-muted underline">
             الموقع

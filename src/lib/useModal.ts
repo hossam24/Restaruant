@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 
-/** Closes on Escape and stops the page behind from scrolling while the modal is open. */
 export function useModal(open: boolean, onClose: () => void) {
   useEffect(() => {
     if (!open) return

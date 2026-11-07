@@ -1,35 +1,24 @@
-// Extracts the 256px BMP entry of public/imgs/icon.ico and writes PNG app icons.
 import { readFileSync } from 'node:fs'
 import sharp from 'sharp'
 
-const ico = readFileSync('public/imgs/icon.ico')
-const count = ico.readUInt16LE(4)
-let best = { w: 0, off: 0 }
-for (let i = 0; i < count; i++) {
-  const o = 6 + i * 16
-  const w = ico[o] || 256
-  if (w > best.w) best = { w, off: ico.readUInt32LE(o + 12) }
-}
-const hdr = best.off
-const w = ico.readInt32LE(hdr + 4)
-const h = ico.readInt32LE(hdr + 8) / 2 // height includes the AND mask
-const bpp = ico.readUInt16LE(hdr + 14)
-if (bpp !== 32) throw new Error(`Unsupported bit depth ${bpp}`)
-const px = hdr + ico.readUInt32LE(hdr)
-const rgba = Buffer.alloc(w * h * 4)
-for (let y = 0; y < h; y++) {
-  const src = px + (h - 1 - y) * w * 4 // rows are stored bottom-up
-  for (let x = 0; x < w; x++) {
-    const s = src + x * 4
-    const d = (y * w + x) * 4
-    rgba[d] = ico[s + 2]
-    rgba[d + 1] = ico[s + 1]
-    rgba[d + 2] = ico[s]
-    rgba[d + 3] = ico[s + 3]
-  }
-}
-const base = sharp(rgba, { raw: { width: w, height: h, channels: 4 } })
+const { themeColor } = JSON.parse(readFileSync('src/brand.json', 'utf8'))
+
+const svg = (size) =>
+  Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="${themeColor}"/>
+  <circle cx="256" cy="256" r="132" fill="none" stroke="#fff" stroke-width="22"/>
+  <circle cx="256" cy="256" r="84" fill="#fff" fill-opacity=".22"/>
+  <g fill="#fff">
+    <rect x="96" y="150" width="14" height="70" rx="7"/><rect x="122" y="150" width="14" height="70" rx="7"/>
+    <rect x="148" y="150" width="14" height="70" rx="7"/>
+    <path d="M96 205h66v22a33 33 0 0 1-33 33 33 33 0 0 1-33-33z"/>
+    <rect x="122" y="250" width="14" height="118" rx="7"/>
+    <path d="M388 150c-34 22-46 62-40 112h40z"/>
+    <rect x="374" y="250" width="14" height="118" rx="7"/>
+  </g>
+</svg>`)
+
 for (const size of [192, 512]) {
-  await base.clone().resize(size, size).png().toFile(`public/icon-${size}.png`)
+  await sharp(svg(size)).png().toFile(`public/icon-${size}.png`)
 }
-console.log(`icons from ${w}x${h} source`)
+console.log('public/icon-192.png and public/icon-512.png written')

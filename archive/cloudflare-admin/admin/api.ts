@@ -2,7 +2,7 @@ import type { Overrides } from '../data/overrides'
 import type { Settings, ShopData } from '../data/shopData'
 import type { MenuItem } from '../data/types'
 
-const KEY = 'rasheedy-admin-token'
+const KEY = 'admin-token'
 
 export interface AdminOrder {
   time: string
@@ -36,9 +36,7 @@ export const getToken = (): string | null => {
 export const clearToken = () => {
   try {
     sessionStorage.removeItem(KEY)
-  } catch {
-    /* ignore */
-  }
+  } catch {}
 }
 
 async function call<T>(path: string, init: RequestInit = {}, auth = true): Promise<T> {
@@ -56,7 +54,6 @@ async function call<T>(path: string, init: RequestInit = {}, auth = true): Promi
   const body = (await res.json().catch(() => null)) as (T & { error?: string }) | null
   if (!res.ok || body === null) {
     if (res.status === 401 && auth) clearToken()
-    // No JSON answer means the request never reached our server code (not deployed, or not running).
     const unreachable =
       'مش قادر أوصل لخدمة الإدارة (' +
       res.status +
@@ -74,12 +71,9 @@ export async function login(password: string): Promise<void> {
   )
   try {
     sessionStorage.setItem(KEY, token)
-  } catch {
-    /* the session just will not survive a refresh */
-  }
+  } catch {}
 }
 
-/** Everything the owner has saved, plus the address of the Google Sheet if it was configured. */
 export const fetchShop = () => call<ShopData & { sheetUrl: string | null }>('/api/admin/menu')
 
 export const saveOverrides = (overrides: Overrides) =>
@@ -96,7 +90,6 @@ export const saveExtras = (extras: MenuItem[]) =>
 export const saveSettings = (settings: Settings) =>
   call<{ settings: Settings }>('/api/admin/settings', { method: 'PUT', body: JSON.stringify({ settings }) }).then((r) => r.settings)
 
-/** Sends one (already shrunk) photo and returns the address the site will serve it from. */
 export async function uploadImage(blob: Blob): Promise<string> {
   const res = await fetch('/api/admin/image', {
     method: 'POST',

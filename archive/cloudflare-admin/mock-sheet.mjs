@@ -1,4 +1,3 @@
-// Stand-in for the Google Apps Script web app, for local testing only: records what the site's server forwards.
 import http from 'node:http'
 import { readFileSync } from 'node:fs'
 const secret = readFileSync('.dev.vars', 'utf8').match(/ORDER_SECRET=(.*)/)[1].trim()

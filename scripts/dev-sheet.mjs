@@ -1,8 +1,3 @@
-// A pretend Google Sheet for trying the website on your own computer.
-// It runs the REAL google-apps-script.js, so the website behaves exactly as it will with Google.
-//   npm run sheet:fake    -> this server, on http://127.0.0.1:8799
-//   npm run dev:sheet     -> the website, talking to it
-// Open http://127.0.0.1:8799/ to see the sheet as a table and edit prices like in Excel.
 import http from 'node:http'
 import { createRuntime } from './fake-sheets.mjs'
 

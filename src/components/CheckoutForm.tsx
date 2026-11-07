@@ -12,7 +12,6 @@ const ORDER: (keyof OrderForm)[] = ['address', 'name', 'phone', 'additionalPhone
 interface Props {
   lines: ResolvedLine[]
   totals: Totals
-  /** Called after the WhatsApp message was opened. */
   onSent: (order: SentOrder) => void
 }
 
@@ -70,7 +69,6 @@ export function CheckoutForm({ lines, totals, onSent }: Props) {
     className: inputCls(!!errors[key]),
   })
 
-  // The owner may mark an item as sold out while it is already sitting in someone's cart.
   const soldOut = lines.filter((l) => l.item.soldOut)
 
   function submit(e: FormEvent) {

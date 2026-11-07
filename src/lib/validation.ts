@@ -1,6 +1,5 @@
 const ARABIC_INDIC = '٠١٢٣٤٥٦٧٨٩'
 
-/** Turns Arabic-Indic digits (٠١٢…) into 0123… so a customer typing on an Arabic keyboard still passes. */
 export function normalizeDigits(value: string): string {
   return value.replace(/[٠-٩]/g, (d) => String(ARABIC_INDIC.indexOf(d)))
 }

@@ -11,7 +11,6 @@ export interface ResolvedLine extends CartLine {
   total: number
 }
 
-/** Joins stored cart lines with the current menu. Lines whose item is gone or hidden are dropped. */
 export function resolveLines(lines: CartLine[]): ResolvedLine[] {
   const out: ResolvedLine[] = []
   for (const line of lines) {
@@ -32,7 +31,6 @@ export function resolveLines(lines: CartLine[]): ResolvedLine[] {
 export const cartSubtotal = (lines: ResolvedLine[]) => lines.reduce((sum, l) => sum + l.total, 0)
 export const cartCount = (lines: ResolvedLine[]) => lines.reduce((sum, l) => sum + l.quantity, 0)
 
-/** Everything the confirmation screen needs after an order was sent. */
 export interface SentOrder {
   url: string
   name: string

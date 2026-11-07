@@ -1,14 +1,8 @@
-// The owner edits the menu from the admin page. Instead of rewriting menu.ts, the admin saves a small
-// list of *changes* (overrides) that are laid over the built-in menu. If the server is unreachable the
-// site simply shows the built-in menu, so a backend problem can never take the menu down.
 import type { MenuItem } from './types'
 
 export interface ItemOverride {
-  /** New price for an item sold at one price. */
   price?: number
-  /** Price before the discount. `null` removes the offer. Must be higher than the price. */
   oldPrice?: number | null
-  /** New price per size id, for items sold by size. */
   sizes?: Record<string, number>
   hidden?: boolean
   soldOut?: boolean
@@ -37,10 +31,6 @@ export function applyOverrides(items: MenuItem[], overrides: Overrides): MenuIte
 const MAX_PRICE = 100_000
 const isPrice = (v: unknown): v is number => typeof v === 'number' && Number.isInteger(v) && v > 0 && v <= MAX_PRICE
 
-/**
- * Cleans whatever the browser sent: unknown items and sizes are dropped, prices must be whole numbers,
- * and anything equal to the built-in menu is not stored. Never trust the admin page's data blindly.
- */
 export function sanitizeOverrides(raw: unknown, base: MenuItem[]): Overrides {
   const out: Overrides = {}
   if (typeof raw !== 'object' || raw === null) return out
@@ -68,7 +58,6 @@ export function sanitizeOverrides(raw: unknown, base: MenuItem[]): Overrides {
       } else if (isPrice(v.oldPrice) && price !== undefined && v.oldPrice > price && v.oldPrice !== item.oldPrice) {
         clean.oldPrice = v.oldPrice
       }
-      // A price raised to or above the old "before" price would show a nonsense offer: drop the offer.
       const effPrice = clean.price ?? item.price
       const effOld = clean.oldPrice === null ? undefined : (clean.oldPrice ?? item.oldPrice)
       if (effOld !== undefined && effPrice !== undefined && effOld <= effPrice) {

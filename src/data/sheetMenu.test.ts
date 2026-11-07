@@ -39,7 +39,10 @@ describe('parseSheetMenu', () => {
     expect(items[1]).toMatchObject({ oldPrice: 130, chickenChoice: true, soldOut: true, hidden: true })
   })
   it('drops bad rows but keeps the good ones', () => {
-    const items = parse([
+    const items = parseSheetMenu({
+      ok: true,
+      categories: [{ id: 'sandwich', label: 'سندوتشات' }],
+      items: [
       ok,
       { ...ok, id: 'bad id!' },
       { ...ok, id: 'b2', name: ' ' },
@@ -50,8 +53,31 @@ describe('parseSheetMenu', () => {
       { ...ok, id: 'b7', price: undefined, sizes: [{ id: 's1', name: 'x', price: -5 }] },
       null,
       'text',
-    ])!.items
+      ],
+    })!.items
     expect(items.map((i) => i.id)).toEqual(['x-abc12345'])
+  })
+  it('uses the sections the sheet lists, in its order, with their notes', () => {
+    const m = parseSheetMenu({
+      ok: true,
+      categories: [
+        { id: 'حلويات', label: 'حلويات', note: 'طازجة كل يوم' },
+        { id: 'sandwich', label: 'سندوتشات' },
+        { id: 'sandwich', label: 'مكرر' },
+        { id: '', label: 'فاضي' },
+        'x',
+      ],
+      items: [ok, { ...ok, id: 'a-2', category: 'حلويات' }],
+    })!
+    expect(m.categories).toEqual([
+      { id: 'حلويات', label: 'حلويات', note: 'طازجة كل يوم' },
+      { id: 'sandwich', label: 'سندوتشات' },
+    ])
+    expect(m.items).toHaveLength(2)
+  })
+  it('without a sections list (older script) the sections are the ones the items use', () => {
+    const m = parse([ok, { ...ok, id: 'a-2', category: 'drinks' }, { ...ok, id: 'a-3' }])!
+    expect(m.categories.map((c) => c.id)).toEqual(['sandwich', 'drinks'])
   })
   it('removes duplicates', () => {
     expect(parse([ok, ok])!.items).toHaveLength(1)

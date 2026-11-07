@@ -1,5 +1,3 @@
-// Converts every raster image in public/imgs to a resized WebP and removes the original.
-// Safe to re-run: files that are already .webp with a clean name are skipped.
 import { readdir, stat, unlink } from 'node:fs/promises'
 import { join, extname } from 'node:path'
 import sharp from 'sharp'

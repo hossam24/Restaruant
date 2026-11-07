@@ -1,9 +1,4 @@
-// Lets the menu open without internet after the first visit.
-// - Pages: network first (so customers always get the newest site), cached copy when offline.
-// - /assets/* (files with a hash in their name): cache first, they never change.
-// - Photos and icons: show the cached one immediately and refresh it in the background.
-// - /api/* is never cached: prices and orders must always be live.
-const CACHE = 'rasheedy-v1'
+const CACHE = 'menu-v1'
 
 self.addEventListener('install', () => self.skipWaiting())
 

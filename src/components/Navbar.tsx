@@ -13,7 +13,7 @@ export function Navbar({ count, onOpenCart }: Props) {
     <header className="sticky top-0 z-40 bg-gradient-to-l from-brand-500 to-brand-400 shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
         <a href="#top" className="flex items-center gap-3 text-xl font-bold text-white">
-          <img src="/imgs/icon.ico" alt="" className="size-12 rounded-full bg-white/20 sm:size-14" />
+          <img src="/icon-192.png" alt="" className="size-12 rounded-xl sm:size-14" />
           {RESTAURANT.name}
         </a>
         <div className="flex items-center gap-2">

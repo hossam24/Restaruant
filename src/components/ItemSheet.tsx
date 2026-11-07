@@ -5,6 +5,7 @@ import type { ChickenPart, MenuItem } from '../data/types'
 import { unitPrice } from '../lib/pricing'
 import { useModal } from '../lib/useModal'
 import { useCart } from '../store/cartStore'
+import { FoodImage } from './FoodImage'
 
 interface Props {
   item: MenuItem
@@ -27,7 +28,6 @@ function Choice({ active, onClick, children }: { active: boolean; onClick: () =>
   )
 }
 
-/** Mounted fresh for every item (via `key`), so its choices always start from the defaults. */
 export function ItemSheet({ item, onClose }: Props) {
   useModal(true, onClose)
   const add = useCart((s) => s.add)
@@ -63,7 +63,7 @@ export function ItemSheet({ item, onClose }: Props) {
         >
           <FaXmark aria-hidden />
         </button>
-        <img src={item.image} alt={item.name} className="h-72 w-full bg-brand-50/60 object-contain p-3" />
+        <FoodImage src={item.image} alt={item.name} className="h-72 w-full bg-brand-50/60 object-contain p-3" />
 
         <div className="flex flex-col gap-4 p-5 sm:p-6">
           <div>

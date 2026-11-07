@@ -4,7 +4,6 @@ import { ApiError, fetchOrders, type AdminOrder } from './api'
 
 const cairoToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo' }).format(new Date())
 
-/** "240 جنيه" -> 240 */
 const amount = (t: string) => Number(normalizeDigits(t).replace(/[^\d.]/g, '')) || 0
 
 export function OrdersPanel({ onExpired, sheetUrl }: { onExpired: () => void; sheetUrl: string | null }) {

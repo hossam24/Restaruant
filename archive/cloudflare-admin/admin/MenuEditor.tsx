@@ -6,7 +6,6 @@ import type { CategoryId, MenuItem } from '../data/types'
 import { normalizeArabic } from '../lib/search'
 import { ApiError, saveOverrides } from './api'
 
-/** What is typed in the boxes for one item. Prices are text so the field can be empty while typing. */
 interface Draft {
   price: string
   oldPrice: string
@@ -37,7 +36,6 @@ const same = (a: Draft, b: Draft) =>
 
 const whole = (s: string) => /^\d+$/.test(s.trim()) && Number(s) > 0
 
-/** A message when the row cannot be saved, otherwise null. */
 function problem(item: MenuItem, d: Draft): string | null {
   if (item.sizes) return item.sizes.every((s) => whole(d.sizes[s.id] ?? '')) ? null : 'كل الأحجام لازم يكون ليها سعر رقم صحيح.'
   if (!whole(d.price)) return 'السعر لازم يكون رقم صحيح أكبر من صفر.'
@@ -61,7 +59,7 @@ function toOverrides(drafts: Drafts): Overrides {
     if (d.soldOut) o.soldOut = true
     out[item.id] = o
   }
-  return out // the server drops everything that equals the built-in menu
+  return out
 }
 
 const input =

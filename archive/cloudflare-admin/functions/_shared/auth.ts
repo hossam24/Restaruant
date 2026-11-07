@@ -10,7 +10,6 @@ async function sign(secret: string, data: string): Promise<string> {
   return toHex(await crypto.subtle.sign('HMAC', key, enc.encode(data)))
 }
 
-/** Compares two strings without stopping at the first difference. */
 export function safeEqual(a: string, b: string): boolean {
   let diff = a.length ^ b.length
   const n = Math.max(a.length, b.length)
@@ -22,7 +21,6 @@ const secretOf = (env: Env) => env.SESSION_SECRET || env.ADMIN_PASSWORD || ''
 
 export async function passwordMatches(env: Env, given: string): Promise<boolean> {
   if (!env.ADMIN_PASSWORD) return false
-  // Hash both sides so the comparison always runs over equal-length values.
   const [a, b] = await Promise.all([
     crypto.subtle.digest('SHA-256', enc.encode(given)),
     crypto.subtle.digest('SHA-256', enc.encode(env.ADMIN_PASSWORD)),
@@ -30,7 +28,6 @@ export async function passwordMatches(env: Env, given: string): Promise<boolean>
   return safeEqual(toHex(a), toHex(b))
 }
 
-/** "expiry.signature". Anyone can read the expiry, nobody can forge it without the secret. */
 export async function issueToken(env: Env): Promise<{ token: string; expiresAt: number }> {
   const expiresAt = Date.now() + SESSION_MS
   return { token: `${expiresAt}.${await sign(secretOf(env), String(expiresAt))}`, expiresAt }
@@ -43,7 +40,6 @@ async function tokenValid(env: Env, token: string): Promise<boolean> {
   return safeEqual(sig, await sign(secretOf(env), exp))
 }
 
-/** Returns an error response when the caller is not the signed-in owner, otherwise null. */
 export async function requireAdmin(request: Request, env: Env): Promise<Response | null> {
   if (!env.ADMIN_PASSWORD) return json({ error: 'لوحة التحكم لسه متفعلتش على السيرفر.' }, 503)
   const header = request.headers.get('Authorization') ?? ''

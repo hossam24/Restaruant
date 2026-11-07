@@ -1,0 +1,31 @@
+[33mcommit a180ddd5541529959a230c8800cce90ae01f7d80[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/react-google-sheet-menu[m[33m, [m[1;32mbackup-before-clean[m[33m)[m
+Author:     Hossam Mohamed <53572583+hossam24@users.noreply.github.com>
+AuthorDate: Sat Nov 7 22:27:51 2026 +0200
+Commit:     Hossam Mohamed <53572583+hossam24@users.noreply.github.com>
+CommitDate: Sat Nov 7 22:27:51 2026 +0200
+
+    Rebuild the site in React, with the menu and prices in a Google Sheet
+    
+    - React 19 + Vite + TypeScript + Tailwind v4 storefront (RTL Arabic), replacing the plain HTML/JS site (kept in legacy/)
+    - Cart with per-item notes, upsell, reorder, open/closed status, search/sort, dark mode, PWA/offline, share image
+    - Menu, prices, offers, sold-out/hidden flags, opening hours and delivery fee are read from a Google Sheet (Apps Script web app); no backend needed
+    - Orders are re-priced by the sheet script, rate-limited, and logged in a per-day tab; WhatsApp ordering is unchanged
+    - Local fake Google Sheet for development (npm run sheet:fake / dev:sheet) and 100+ tests
+    - Old Cloudflare admin design archived in archive/cloudflare-admin
+    - Local password file (dev.vars.MY-LOCAL-COPY) is git-ignored
+
+[33mcommit b704e6126566bcd880e5263027145dcb7617a56f[m[33m ([m[1;32mmaster[m[33m, [m[1;32mfeature/react-revamp[m[33m)[m
+Author:     Hossam Mohamed <53572583+hossam24@users.noreply.github.com>
+AuthorDate: Sat Oct 10 16:46:59 2026 +0300
+Commit:     Hossam Mohamed <53572583+hossam24@users.noreply.github.com>
+CommitDate: Sat Oct 10 16:46:59 2026 +0300
+
+    يق
+
+[33mcommit f38ba770b4452720676c8377fbc849cea7375998[m
+Author:     Hmohamed25 <154885714+Hmohamed25@users.noreply.github.com>
+AuthorDate: Sun Sep 27 16:04:09 2026 +0300
+Commit:     Hmohamed25 <154885714+Hmohamed25@users.noreply.github.com>
+CommitDate: Sun Sep 27 16:04:09 2026 +0300
+
+    ch

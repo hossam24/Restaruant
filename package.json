@@ -1,5 +1,5 @@
 {
-  "name": "rasheedy-restaurant",
+  "name": "restaurant-menu-site",
   "private": true,
   "version": "2.0.0",
   "type": "module",
@@ -12,7 +12,8 @@
     "test": "vitest run",
     "typecheck": "tsc -b",
     "apps-script": "node scripts/build-apps-script.mjs",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "icons": "node scripts/make-icons.mjs && node scripts/make-og.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

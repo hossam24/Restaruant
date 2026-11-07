@@ -9,7 +9,6 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-// Offline support. Only in the real build: during development a cached page would hide your changes.
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {})

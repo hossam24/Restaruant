@@ -7,12 +7,6 @@ import { clientIp, json, rateLimited, readShop, type Env } from '../_shared/http
 
 const str = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 
-/**
- * Receives an order from the site and records it in the Google Sheet.
- * It does not trust the browser: customer details are validated again, and every price is recomputed
- * here from the menu, so a faked request cannot put made-up orders or amounts in the Sheet.
- * The Sheet's address and secret live only in this server's settings.
- */
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (!env.APPS_SCRIPT_URL) return json({ error: 'تسجيل الطلبات في الشيت لسه متفعلش.' }, 503)
 
@@ -41,7 +35,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json({ error: 'الطلب فاضي أو كبير أوي.' }, 422)
   }
 
-  // The menu as customers currently see it: built-in items with the owner's changes, plus the owner's own items.
   const shop = await readShop(env)
   const menu = [...applyOverrides(menuItems, shop.overrides), ...shop.extras]
   const byId = new Map(menu.map((i) => [i.id, i]))

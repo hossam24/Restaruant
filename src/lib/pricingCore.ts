@@ -1,4 +1,3 @@
-// Pure price logic with no browser or menu-store imports, so the server (functions/) can use it too.
 import { BREAST_SURCHARGE, DELIVERY, type DeliveryConfig } from '../config'
 import type { ChickenPart, MenuItem } from '../data/types'
 
@@ -7,7 +6,6 @@ export function lineKey(itemId: string, sizeId?: string, part?: ChickenPart, not
   return note ? `${base}#${note}` : base
 }
 
-/** Price of one unit for a given choice of size and chicken part. */
 export function unitPrice(item: MenuItem, sizeId?: string, part?: ChickenPart): number {
   const base = item.sizes
     ? (item.sizes.find((s) => s.id === sizeId) ?? item.sizes[0]).price
@@ -27,11 +25,9 @@ export function lineName(item: MenuItem, sizeId?: string, part?: ChickenPart): s
 
 export interface Totals {
   subtotal: number
-  /** `null` when the delivery fee is not decided yet (total is then "غير شامل التوصيل"). */
   deliveryFee: number | null
   freeDelivery: boolean
   total: number
-  /** How much more to add to get free delivery, or `null` when that does not apply. */
   remainingForFree: number | null
 }
 

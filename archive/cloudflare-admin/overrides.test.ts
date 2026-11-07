@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { menuItems } from './menu'
 import { applyOverrides, sanitizeOverrides } from './overrides'
 
-const single = menuItems.find((i) => !i.sizes && i.oldPrice === undefined)! // plain item, no offer
+const single = menuItems.find((i) => !i.sizes && i.oldPrice === undefined)!
 const offer = menuItems.find((i) => i.oldPrice !== undefined)!
 const sized = menuItems.find((i) => i.sizes)!
 

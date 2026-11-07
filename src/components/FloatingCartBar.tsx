@@ -7,7 +7,6 @@ interface Props {
   onOpen: () => void
 }
 
-/** Phone-only shortcut so the customer never has to scroll up to find the cart. */
 export function FloatingCartBar({ count, subtotal, hidden, onOpen }: Props) {
   if (count === 0 || hidden) return null
   return (

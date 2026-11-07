@@ -7,7 +7,7 @@ import { buildOrderMessage } from './whatsapp'
 
 describe('opening hours', () => {
   const day = { open: '12:00', close: '23:00' }
-  const late = { open: '12:00', close: '02:00' } // closes after midnight
+  const late = { open: '12:00', close: '02:00' }
 
   it('handles a same-day schedule', () => {
     expect(openStatus(day, 11 * 60 + 59).open).toBe(false)
@@ -17,8 +17,8 @@ describe('opening hours', () => {
   })
   it('handles closing after midnight', () => {
     expect(openStatus(late, 23 * 60).open).toBe(true)
-    expect(openStatus(late, 60).open).toBe(true) // 01:00
-    expect(openStatus(late, 2 * 60).open).toBe(false) // 02:00
+    expect(openStatus(late, 60).open).toBe(true)
+    expect(openStatus(late, 2 * 60).open).toBe(false)
     expect(openStatus(late, 8 * 60).open).toBe(false)
   })
   it('reports when the status changes next', () => {
@@ -39,16 +39,16 @@ describe('search', () => {
   })
   it('finds items regardless of spelling', () => {
     const hits = menuItems.filter((i) => matchesQuery(i, 'فرخه'))
-    expect(hits.length).toBeGreaterThan(3)
+    expect(hits.length).toBeGreaterThan(1)
     expect(hits.length).toBe(menuItems.filter((i) => matchesQuery(i, 'فرخة')).length)
   })
   it('requires every word to match', () => {
-    const both = menuItems.filter((i) => matchesQuery(i, 'كفتة ممبار'))
+    const both = menuItems.filter((i) => matchesQuery(i, 'كفتة طحينة'))
     expect(both.length).toBeGreaterThan(0)
     for (const i of both) {
       const text = normalizeArabic(`${i.name} ${i.description ?? ''}`)
       expect(text).toContain('كفته')
-      expect(text).toContain('ممبار')
+      expect(text).toContain('طحينه')
     }
   })
   it('matches everything for an empty query and nothing for gibberish', () => {
@@ -82,7 +82,7 @@ describe('delivery totals', () => {
 })
 
 describe('item notes', () => {
-  const item = menuItems.find((i) => i.category === 'sandwich')!
+  const item = menuItems.find((i) => i.category === 'السندوتشات')!
   it('makes lines with different notes separate', () => {
     expect(lineKey(item.id, undefined, undefined, 'بدون بصل')).not.toBe(lineKey(item.id))
   })
@@ -90,7 +90,7 @@ describe('item notes', () => {
     const lines = resolveLines([
       { key: lineKey(item.id, undefined, undefined, 'بدون بصل'), itemId: item.id, note: 'بدون بصل', quantity: 1 },
     ])
-    const form = { name: 'أحمد', phone: '01012345678', additionalPhone: '', address: 'شارع الحلو', notes: '' }
+    const form = { name: 'أحمد', phone: '01012345678', additionalPhone: '', address: 'شارع التحرير', notes: '' }
     const m = buildOrderMessage(lines, form)
     expect(m).toContain('   📝 بدون بصل')
   })

@@ -3,46 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#e67e22" />
+    <meta name="theme-color" content="__BRAND_THEME__" />
     <meta name="color-scheme" content="light dark" />
     <script>
       // Apply a saved light/dark choice before first paint so the page never flashes the wrong theme.
       try {
-        var t = localStorage.getItem('rasheedy-theme')
+        var t = localStorage.getItem('menu-theme')
         if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t
       } catch (e) {}
     </script>
-    <title>مشويات رشيدي - RasheeDy</title>
-    <meta name="description" content="مشويات رشيدي - ملك العروض. اطلب مشويات وسندوتشات ووجبات وصواني عائلية واحنا نوصلهالك." />
 
-    <link rel="icon" href="/imgs/icon.ico" />
+    <title>__BRAND_NAME__ - المنيو</title>
+    <meta name="description" content="__BRAND_DESCRIPTION__" />
+
+    <link rel="icon" type="image/png" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
 
     <meta property="og:type" content="restaurant.restaurant" />
     <meta property="og:locale" content="ar_EG" />
-    <meta property="og:title" content="مشويات رشيدي - ملك العروض" />
-    <meta property="og:description" content="اطلب مشويات وسندوتشات ووجبات وصواني عائلية واحنا نوصلهالك." />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "مشويات رشيدي",
-        "servesCuisine": "مشويات",
-        "telephone": ["+20403297431", "+201501108083"],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "شارع الحلو مع الامام البصيري امام كلية تجارة من الحلو",
-          "addressCountry": "EG"
-        },
-        "sameAs": [
-          "https://www.facebook.com/RasheedyRestaurant",
-          "https://www.instagram.com/rasheedy.restaurant",
-          "https://www.tiktok.com/@rasheedytanta"
-        ]
-      }
-    </script>
+    <meta property="og:title" content="__BRAND_NAME__" />
+    <meta property="og:description" content="__BRAND_DESCRIPTION__" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +31,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <noscript>الموقع محتاج JavaScript عشان يشتغل. للطلب كلمنا على 01501108083.</noscript>
+    <noscript>الموقع محتاج JavaScript عشان يشتغل.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

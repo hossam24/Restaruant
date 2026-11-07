@@ -13,15 +13,12 @@ export interface AddArgs {
 
 interface CartState {
   lines: CartLine[]
-  /** The cart as it was when the last order was sent. Lets the customer order the same again. */
   lastOrder: CartLine[]
   add: (args: AddArgs) => void
   increment: (key: string) => void
-  /** Removes the line when the quantity would reach zero. */
   decrement: (key: string) => void
   remove: (key: string) => void
   clear: () => void
-  /** Called after an order was sent: remembers it and empties the cart. */
   complete: () => void
   reorder: () => void
 }
@@ -52,6 +49,6 @@ export const useCart = create<CartState>()(
       complete: () => set((s) => ({ lastOrder: s.lines.length ? s.lines : s.lastOrder, lines: [] })),
       reorder: () => set((s) => ({ lines: s.lastOrder })),
     }),
-    { name: 'rasheedy-cart', version: 1 },
+    { name: 'menu-cart', version: 1 },
   ),
 )

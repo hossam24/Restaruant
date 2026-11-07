@@ -1,3 +1,4 @@
+import { RESTAURANT } from '../config'
 import { formatTime } from '../lib/hours'
 import { useOpenStatus } from '../lib/useOpenStatus'
 
@@ -22,11 +23,11 @@ function StatusPill() {
 export function Hero() {
   return (
     <section id="top" className="bg-gradient-to-l from-brand-500 to-brand-400 px-4 pb-12 pt-10 text-center text-white">
-      <h1 className="text-balance text-3xl font-extrabold sm:text-5xl">أهلاً بيك في مشويات رشيدي</h1>
-      <p className="mt-4 text-xl font-semibold sm:text-2xl">🔥🔥 ملك العروض 🔥🔥</p>
-      <p className="mx-auto mt-3 max-w-xl text-balance text-lg text-white/90">
-        اختار اللي نفسك فيه، ابعت طلبك على واتساب، واحنا نجهزهولك ونوصله لحد عندك.
-      </p>
+      <h1 className="text-balance text-3xl font-extrabold sm:text-5xl">أهلاً بيك في {RESTAURANT.name}</h1>
+      {RESTAURANT.tagline && <p className="mt-4 text-xl font-semibold sm:text-2xl">{RESTAURANT.tagline}</p>}
+      {RESTAURANT.description && (
+        <p className="mx-auto mt-3 max-w-xl text-balance text-lg text-white/90">{RESTAURANT.description}</p>
+      )}
       <StatusPill />
     </section>
   )

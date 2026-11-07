@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CartDrawer } from './components/CartDrawer'
-import { CategoryTabs, type CategoryFilter } from './components/CategoryTabs'
+import { CategoryMenu, type CategoryFilter } from './components/CategoryMenu'
 import { FloatingCartBar } from './components/FloatingCartBar'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
@@ -28,7 +28,6 @@ export default function App() {
   const menu = useMenu((s) => s.items)
   const lines = useMemo(() => resolveLines(stored), [stored, menu])
 
-  // Pick up the latest menu from the Google Sheet, and again whenever the customer comes back to the tab.
   useEffect(() => {
     void refreshMenu()
     const onVisible = () => document.visibilityState === 'visible' && void refreshMenu()
@@ -47,7 +46,6 @@ export default function App() {
 
   const count = cartCount(lines)
   const anyModalOpen = cartOpen || detail !== null || sent !== null
-  // Keep the sheet showing live data (price, sold out) for the item that is open.
   const liveDetail = detail ? (menu.find((i) => i.id === detail.id) ?? detail) : null
 
   return (
@@ -56,14 +54,16 @@ export default function App() {
       <Navbar count={count} onOpenCart={() => setCartOpen(true)} />
       <Hero />
       <SearchBar query={query} onQuery={setQuery} sort={sort} onSort={setSort} />
-      <CategoryTabs
-        active={category}
-        onChange={(c) => {
-          setCategory(c)
-          setQuery('')
-        }}
-      />
-      <MenuGrid category={category} query={query} sort={sort} onOpen={setDetail} onClearSearch={() => setQuery('')} />
+      <div className="mx-auto flex max-w-6xl flex-col px-4 md:flex-row md:gap-8">
+        <CategoryMenu
+          active={category}
+          onChange={(c) => {
+            setCategory(c)
+            setQuery('')
+          }}
+        />
+        <MenuGrid category={category} query={query} sort={sort} onOpen={setDetail} onClearSearch={() => setQuery('')} />
+      </div>
       <Footer />
       {count > 0 && <div aria-hidden className="h-20 md:hidden" />}
 

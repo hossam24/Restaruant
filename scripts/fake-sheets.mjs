@@ -1,7 +1,3 @@
-// A small in-memory stand-in for Google Sheets / Apps Script, so the REAL google-apps-script.js can be run
-// and tested on this computer. It models only what the script uses, including two Google behaviours that
-// matter: typing "10:00" into a cell turns it into a time value unless the cell is formatted as text,
-// and cache entries expire.
 import { readFileSync } from 'node:fs'
 import { webcrypto } from 'node:crypto'
 import vm from 'node:vm'
@@ -9,8 +5,8 @@ import vm from 'node:vm'
 class FakeSheet {
   constructor(name) {
     this.name = name
-    this.cells = new Map() // "row:col" -> value
-    this.formats = new Map() // "row:col" -> number format
+    this.cells = new Map()
+    this.formats = new Map()
     this.validations = []
     this.frozen = 0
   }
@@ -20,7 +16,6 @@ class FakeSheet {
   _set(r, c, v) {
     const key = `${r}:${c}`
     if (v === '' || v === null || v === undefined) return void this.cells.delete(key)
-    // Google turns "10:00" typed into an unformatted cell into a time. Text-formatted cells keep the text.
     if (typeof v === 'string' && this.formats.get(key) !== '@' && /^\d{1,2}:\d{2}$/.test(v)) {
       const [h, m] = v.split(':').map(Number)
       v = new Date(Date.UTC(1899, 11, 30, h, m))
@@ -51,7 +46,6 @@ class FakeSheet {
 class FakeRange {
   constructor(sheet, r, c, nr, nc) {
     Object.assign(this, { sheet, r, c, nr, nc })
-    // Anything we do not model (colours, fonts, wrapping...) is accepted and ignored.
     return new Proxy(this, {
       get: (t, prop) => (prop in t ? t[prop] : typeof prop === 'string' && prop.startsWith('set') ? () => t.self() : undefined),
     })
@@ -93,7 +87,7 @@ class FakeRange {
     return this
   }
   setDataValidation(rule) {
-    this.sheet.validations.push({ row: this.r, col: this.c, rows: this.nr, cols: this.nc, list: rule.list })
+    this.sheet.validations.push({ row: this.r, col: this.c, rows: this.nr, cols: this.nc, list: rule.list, fromTab: rule.fromTab })
     return this
   }
 }
@@ -118,7 +112,6 @@ function formatDate(date, tz, fmt) {
   return fmt.replace('yyyy', p.year).replace('MM', p.month).replace('dd', p.day).replace('HH', p.hour).replace('mm', p.minute).replace('ss', p.second)
 }
 
-/** Loads a copy of the script into a fresh fake Google environment. */
 export function createRuntime(scriptPath = 'google-apps-script.js') {
   const sheets = new Map()
   const clock = { offset: 0, now: () => Date.now() + clock.offset }
@@ -145,11 +138,16 @@ export function createRuntime(scriptPath = 'google-apps-script.js') {
           this.list = list
           return this
         },
+        requireValueInRange(range) {
+          this.list = range.getValues().flat().filter((v) => v !== '')
+          this.fromTab = range.sheet.name
+          return this
+        },
         setAllowInvalid() {
           return this
         },
         build() {
-          return { list: this.list }
+          return { list: this.list, fromTab: this.fromTab }
         },
       }),
       getUi: () => ({
@@ -194,17 +192,13 @@ export function createRuntime(scriptPath = 'google-apps-script.js') {
     alerts,
     cacheStore,
     setup: () => sandbox.setup(),
-    /** What the website receives when it asks for the menu. */
     menu: () => parse(sandbox.doGet({})),
-    /** What happens when the website sends an order. */
     order: (body) => parse(sandbox.doPost({ postData: { contents: typeof body === 'string' ? body : JSON.stringify(body) } })),
-    /** The owner types something into a cell (this also fires Google's onEdit, as it does in real life). */
     edit(tab, row, col, value) {
       const sheet = sheets.get(tab)
       sheet.getRange(row, col).setValue(value)
       sandbox.onEdit({ range: sheet.getRange(row, col) })
     },
-    /** The owner pastes several cells at once. */
     paste(tab, row, col, rows) {
       const sheet = sheets.get(tab)
       sheet.getRange(row, col, rows.length, rows[0].length).setValues(rows)

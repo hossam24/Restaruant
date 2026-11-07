@@ -50,7 +50,6 @@ function problem(d: Draft): string | null {
 
 const newId = () => 'x-' + Math.random().toString(36).slice(2, 10).padEnd(8, '0')
 
-/** Shrinks a phone photo to a web-sized WebP in the browser, so uploads are small and the site stays fast. */
 async function shrink(file: File): Promise<Blob> {
   const bitmap = await createImageBitmap(file)
   const scale = Math.min(1, 900 / bitmap.width)

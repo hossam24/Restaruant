@@ -4,7 +4,6 @@ import type { SentOrder } from '../lib/pricing'
 import { useModal } from '../lib/useModal'
 
 interface Props {
-  /** The order that was just sent, or null when the dialog is closed. */
   order: SentOrder | null
   onClose: () => void
 }

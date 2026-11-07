@@ -5,7 +5,6 @@ const toMinutes = (hhmm: string) => {
   return h * 60 + m
 }
 
-/** Minutes since midnight in Cairo, whatever the visitor's own timezone is. */
 export function cairoMinutes(date: Date = new Date()): number {
   const parts = new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Africa/Cairo',
@@ -19,7 +18,6 @@ export function cairoMinutes(date: Date = new Date()): number {
 
 export interface OpenStatus {
   open: boolean
-  /** The next time the status flips, "HH:MM". */
   changesAt: string
 }
 
@@ -30,7 +28,6 @@ export function openStatus(hours: Hours, minutes: number): OpenStatus {
   return { open, changesAt: open ? hours.close : hours.open }
 }
 
-/** "14:30" -> "2:30 م" */
 export function formatTime(hhmm: string): string {
   const [h, m] = hhmm.split(':').map(Number)
   const suffix = h >= 12 ? 'م' : 'ص'

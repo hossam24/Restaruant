@@ -3,7 +3,6 @@ import { json, type Env } from '../../_shared/http'
 
 const cairoToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo' }).format(new Date())
 
-/** The owner's view of a day's orders. They are read from the Google Sheet through the Apps Script. */
 export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   const denied = await requireAdmin(request, env)
   if (denied) return denied

@@ -14,10 +14,9 @@ function totalsBlock(t: Totals): string {
   )
 }
 
-/** Same layout the kitchen is used to reading on WhatsApp. */
 export function buildOrderMessage(lines: ResolvedLine[], form: OrderForm, totals?: Totals): string {
   const t = totals ?? orderTotals(cartSubtotal(lines))
-  let m = '🍽️ *طلب جديد من مطعم راشيدي*\n\n'
+  let m = '🍽️ *طلب جديد من ' + RESTAURANT.name + '*\n\n'
   m += '📦 *نوع الطلب: توصيل*\n\n'
   m += '📋 *الطلبات:*\n'
   for (const l of lines) {
