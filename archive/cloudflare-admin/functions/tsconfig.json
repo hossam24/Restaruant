@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["./**/*.ts", "../src/data/menu.ts", "../src/data/overrides.ts", "../src/data/types.ts", "../src/lib/pricingCore.ts", "../src/lib/validation.ts", "../src/config.ts"]
+}

@@ -1,0 +1,7 @@
+# Copy to .dev.vars (git-ignored) for local development with `npm run dev:full`.
+# In production set the same names in Cloudflare: Pages project -> Settings -> Variables and Secrets.
+ADMIN_PASSWORD=Admin@123
+ORDER_SECRET=the-same-random-text-you-put-in-Apps-Script
+APPS_SCRIPT_URL=https://script.google.com/macros/s/XXXX/exec
+# Optional: the address of the Google Sheet itself, shows an "open the Sheet" button in /admin
+SHEET_URL=https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit
