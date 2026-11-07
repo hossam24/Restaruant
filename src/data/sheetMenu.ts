@@ -6,6 +6,16 @@ export const DEFAULT_IMAGE = '/imgs/default.webp'
 export const MAX_ITEMS = 500
 export const MAX_CATEGORIES = 30
 
+const OLD_SECTION_NAMES: Record<string, string> = {
+  offers: 'العروض',
+  sandwich: 'السندوتشات',
+  mashawy: 'المشويات',
+  wagabatFardy: 'الوجبات الفردية',
+  wagabatZawgy: 'الوجبات الزوجية',
+  sawaany: 'الصواني العائلية',
+  edafat: 'الإضافات',
+}
+
 const ID = /^[A-Za-z0-9_-]{2,40}$/
 const SIZE_ID = /^s[1-3]$/
 
@@ -66,6 +76,11 @@ export interface SheetMenu {
   settings: Settings
 }
 
+const oldRank = (id: string) => {
+  const i = Object.keys(OLD_SECTION_NAMES).indexOf(id)
+  return i === -1 ? 99 : i
+}
+
 function parseCategories(raw: unknown): Category[] {
   if (!Array.isArray(raw)) return []
   const seen = new Set<string>()
@@ -102,6 +117,8 @@ export function parseSheetMenu(raw: unknown): SheetMenu | null {
   }
   if (items.length === 0) return null
   const categories =
-    listed.length > 0 ? listed : [...new Set(items.map((i) => i.category))].map((id): Category => ({ id, label: id }))
+    listed.length > 0 ? listed : [...new Set(items.map((i) => i.category))]
+        .sort((a, b) => oldRank(a) - oldRank(b))
+        .map((id): Category => ({ id, label: OLD_SECTION_NAMES[id] ?? id }))
   return { items, categories, settings: sanitizeSettings(r.settings, DEFAULT_SETTINGS) }
 }
